@@ -1,0 +1,26 @@
+.main-menu.navbar {
+  background-color: #29405B !important;
+
+  .navbar-brand {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+
+  }
+
+  .navbar-nav {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 19px;
+
+    .nav-link {
+      font-weight: normal;
+      color: white;
+    }
+
+    .nav-link.active {
+      font-weight: bold;
+    }
+  }
+}
