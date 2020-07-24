@@ -1,6 +1,6 @@
-let componentPosition: [string, number, number] = ["a", 0, 0]
 let observers: PositionObserver[] = []
-export type PositionObserver = ((position: [string, number, number]) => void) | null
+export type PositionObserver = ((boxMap: [number, number]) => void) | null
+let componentPosition: [number, number] = [0, 0]
 
 function emitChange() {
     observers.forEach((o) => o && o(componentPosition))
@@ -16,17 +16,19 @@ export function observe(o: PositionObserver): () => void {
 }
 
 export function canMoveComponent(toX: number, toY: number): boolean {
-    const [index, x, y] = componentPosition
+    const [x, y] = componentPosition
     const dx = toX - x
     const dy = toY - y
 
     //Can move anywhere on grid
     const bool = ((Math.abs(dx) > 0 || Math.abs(dy) > 0))
     console.log(bool)
-    return bool
+    return bool;
+
+    // return !componentAtLocation
 }
 
-export function moveComponent(index: string, toX: number, toY: number): void {
-    componentPosition = [index, toX, toY]
+export function moveComponent(toX: number, toY: number): void {
+    componentPosition = [toX, toY]
     emitChange()
 }

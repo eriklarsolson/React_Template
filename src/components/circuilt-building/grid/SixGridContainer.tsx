@@ -13,35 +13,34 @@ const containerStyle: React.CSSProperties = {
     border: '1px solid gray',
 }
 
-export interface BoxMap {
+interface BoxMap {
     [key: string]: { x: number; y: number; type: string }
 }
 
-
 export const SixGridContainer: React.FC = () => {
-    const [components, setComponents] = useState<BoxMap>({
-        a: { x: 1, y: 2, type: ComponentTypes.BATTERY },
-        b: { x: 2, y: 3, type: ComponentTypes.WIRE },
+    const [boxes, setBoxes] = useState<BoxMap>({
+        a: { x: 20, y: 80, type: 'battery' },
+        b: { x: 180, y: 20, type: 'Drag me too' },
     })
 
     const moveBox = useCallback(
         (id: string, x: number, y: number) => {
-            setComponents(
-                update(components, {
+            setBoxes(
+                update(boxes, {
                     [id]: {
                         $merge: { x, y },
                     },
                 }),
             )
         },
-        [components],
+        [boxes],
     )
 
-    useEffect(() => observe((newPos: [string, number, number]) => moveBox(newPos[0], newPos[1], newPos[2])))
+    useEffect(() => observe((boxMap: [number, number]) => moveBox("a", boxMap[0], boxMap[1])))
     return (
         <div className={"d-flex justify-content-center align-content-center"}>
             <div style={containerStyle}>
-                <SixGrid components={components}  />
+                <SixGrid components={boxes}  />
             </div>
         </div>
     )

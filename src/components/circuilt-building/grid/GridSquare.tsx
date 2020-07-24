@@ -22,7 +22,7 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, components, childre
         accept: [ComponentTypes.WIRE, ComponentTypes.BATTERY, ComponentTypes.RESISTOR
             ,ComponentTypes.SWITCH , ComponentTypes.INDUCTOR , ComponentTypes.CAPACITOR],
         canDrop: () => canMoveComponent(x, y),
-        drop: () => moveComponent("b", x, y),
+        drop: () => moveComponent(x, y),
         collect: (monitor) => ({
             isOver: monitor.isOver(),
             canDrop: monitor.canDrop(),

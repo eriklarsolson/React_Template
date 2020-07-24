@@ -4,20 +4,52 @@ import Sidebar from "./Sidebar";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import { DndProvider } from 'react-dnd'
 import Button from "react-bootstrap/Button";
-import Popup from "../about/page_popup/Popup";
+import Popup from "../shared/modals/Popup";
 import {SixGridContainer} from "./grid/SixGridContainer";
-import {CustomDragLayer} from "./grid2/CustomDragLayer";
+import {Redirect} from 'react-router-dom';
 
-class CircuitBuilding extends React.Component {
+class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            popupOpened: true
+            popupOpened: true,
+            currentLevel: 1,
+            levels: [
+                {
+                    components: [
+                        {
+                            x: 0,
+                            y: 3,
+                            type: "battery"
+                        }
+                    ]
+                }
+            ]
         };
     }
 
 
     render() {
+        const goToNextLevel = () => {
+            const nextLevel = this.state.currentLevel + 1;
+
+            if(nextLevel === 4) {
+                this.props.history.push('/metal-engraving');
+            } else {
+                this.setState({currentLevel: nextLevel})
+            }
+        }
+
+        const goToLastLevel = () => {
+            const pastLevel = this.state.currentLevel - 1;
+
+            if(pastLevel === 0) {
+                this.props.history.push('/');
+            } else {
+                this.setState({currentLevel: pastLevel})
+            }
+        }
+
         return (
             <>
                 <Popup title={"01 Circuit Building Objective"} description={"Use the circuit components at your disposal " +
@@ -37,11 +69,11 @@ class CircuitBuilding extends React.Component {
                                 <Container fluid style={{margin: "0", padding: "0"}}>
                                     <Row style={{margin: "3%"}}>
                                         <Col>
-                                            <Button style={{backgroundColor: "#3BD186"}}>Back</Button>
+                                            <Button style={{backgroundColor: "#3BD186"}} onClick={goToLastLevel}>Back</Button>
                                         </Col>
 
                                         <Col>
-                                            <h3>Circuit Board level 1</h3>
+                                            <h3>Circuit Board level {this.state.currentLevel}</h3>
                                         </Col>
 
                                         <Col>
@@ -76,7 +108,7 @@ class CircuitBuilding extends React.Component {
                                         </Col>
 
                                         <Col>
-                                            <Button style={{backgroundColor: "#3BD186"}}>Next</Button>
+                                            <Button style={{backgroundColor: "#3BD186"}} onClick={goToNextLevel}>Next</Button>
                                         </Col>
                                     </Row>
                                 </Container>

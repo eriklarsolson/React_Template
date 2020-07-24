@@ -6,7 +6,6 @@ import {Wire} from "./components/Wire";
 import {Switch} from "./components/Switch";
 import {Inductor} from "./components/Inductor";
 import {Capacitor} from "./components/Capacitor";
-import {BoxMap} from "./SixGridContainer";
 
 export interface GridProps {
     components: any,
