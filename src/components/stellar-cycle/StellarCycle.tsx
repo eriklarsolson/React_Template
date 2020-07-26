@@ -23,92 +23,109 @@ class StellarCycle extends React.Component<any, any> {
                 <Popup title={"03 Stellar Life Cycle"} description={"DESCRIPTION HERE"} />
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0"}}>
+                    <Row style={{margin: "3%"}}>
+                        <Col className={"col-1"}>
+                            <Button style={{backgroundColor: "#3BD186"}} onClick={() => this.props.history.push('/telescope-activity')}>Back</Button>
+                        </Col>
+
+                        <Col>
+                            <h3>Stellar Life Cycle</h3>
+                        </Col>
+                    </Row>
+
                     <Row>
-                        <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
-                            <Container fluid style={{margin: "0", padding: "0"}}>
-                                <Row style={{margin: "3%"}}>
-                                    <Col className={"col-1"}>
-                                        <Button style={{backgroundColor: "#3BD186"}} onClick={() => this.props.history.push('/telescope-activity')}>Back</Button>
-                                    </Col>
+                        <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                            <div className={"justify-content-center align-content-center"} style={{width: "200px",
+                                height: "200px", lineHeight: "200px", backgroundColor: "grey", borderRadius: "100px"}}
+                                onClick={() => goToObjectPage("Nebula")}>
+                                <p style={{color: "white", fontWeight: "bold"}}>Nebula</p>
+                            </div>
+                        </Col>
 
-                                    <Col>
-                                        <h3>Stellar Life Cycle</h3>
-                                    </Col>
-                                </Row>
+                        <Col style={{padding: "0"}}>
+                            <Row className={"justify-content-center align-content-center"} style={{marginBottom: "5%"}}>
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                    <div style={{width: "150px", height: "150px", lineHeight: "150px",
+                                        backgroundColor: "grey", borderRadius: "100px"}}
+                                        onClick={() => goToObjectPage("Avg Star")}>
+                                        <p style={{color: "white", fontWeight: "bold"}}>Avg Star</p>
+                                    </div>
+                                </Col>
 
-                                <Row className={"justify-content-center align-content-center"} >
-                                    <Col className={"col-2 justify-content-center align-content-center"} style={{padding: "0"}}>
-                                        <div style={{width: "200px", height: "200px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                            Star
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                    <div style={{width: "150px", height: "150px", lineHeight: "150px",
+                                        backgroundColor: "grey", borderRadius: "100px"}}
+                                        onClick={() => goToObjectPage("Red Giant")}>
+                                        <p style={{color: "white", fontWeight: "bold"}}>Red Giant</p>
+                                    </div>
+                                </Col>
+
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                    <div style={{width: "150px", height: "150px", lineHeight: "150px",
+                                        backgroundColor: "grey", borderRadius: "100px"}}
+                                        onClick={() => goToObjectPage("Planetary Nebula")}>
+                                        <p style={{color: "white", fontWeight: "bold"}}>Planetary Nebula</p>
+                                    </div>
+                                </Col>
+
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                    <div style={{width: "125px", height: "125px", lineHeight: "125px",
+                                        backgroundColor: "grey", borderRadius: "100px"}}
+                                        onClick={() => goToObjectPage("White Dwarf")}>
+                                        <p style={{color: "white", fontWeight: "bold"}}>White Dwarf</p>
+                                    </div>
+                                </Col>
+                            </Row>
+
+                            <Row className={"justify-content-center align-content-center"} >
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                        <div style={{width: "150px", height: "150px", lineHeight: "150px",
+                                            backgroundColor: "grey", borderRadius: "100px"}}
+                                             onClick={() => goToObjectPage("Massive Star")}>
+                                            <p style={{color: "white", fontWeight: "bold"}}>Massive Star</p>
                                         </div>
-                                    </Col>
+                                </Col>
 
-                                    <Col className={"col-2 justify-content-center align-content-center"} style={{padding: "0"}}>
-                                        <Row style={{margin: "50px 10px 50px 10px"}}>
-                                            <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                Star
-                                            </div>
-                                        </Row>
-                                        <Row style={{margin: "50px 10px 50px 10px"}}>
-                                            <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                Star
-                                            </div>
-                                        </Row>
-                                    </Col>
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                        <div style={{width: "150px", height: "150px", lineHeight: "150px",
+                                            backgroundColor: "grey", borderRadius: "100px"}}
+                                             onClick={() => goToObjectPage("Red Supergiant")}>
+                                            <p style={{color: "white", fontWeight: "bold"}}>Red Supergiant</p>
+                                        </div>
+                                </Col>
 
-                                    <Col className={"col-2 justify-content-center align-content-center"} style={{padding: "0"}}>
-                                        <Row style={{margin: "50px 10px 50px 10px"}}>
-                                            <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                Star
-                                            </div>
-                                        </Row>
-                                        <Row style={{margin: "50px 10px 50px 10px"}}>
-                                            <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                Star
-                                            </div>
-                                        </Row>
-                                    </Col>
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                        <div style={{width: "150px", height: "150px", lineHeight: "150px",
+                                            backgroundColor: "grey", borderRadius: "100px"}}
+                                             onClick={() => goToObjectPage("Supernova")}>
+                                            <p style={{color: "white", fontWeight: "bold"}}>Supernova</p>
+                                        </div>
+                                </Col>
 
-                                    <Col className={"col-2 justify-content-center align-content-center"} style={{padding: "0"}}>
-                                        <Row style={{margin: "50px 10px 50px 10px"}}>
-                                            <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                Star
-                                            </div>
-                                        </Row>
-                                        <Row style={{margin: "50px 10px 50px 10px"}}>
-                                            <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                Star
-                                            </div>
-                                        </Row>
-                                    </Col>
+                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                    <div style={{width: "125px", height: "125px", lineHeight: "125px",
+                                        backgroundColor: "grey", borderRadius: "100px", marginBottom: "5px"}}
+                                        onClick={() => goToObjectPage("Neutron Star")}>
+                                        <p style={{color: "white", fontWeight: "bold"}}>Neutron Star</p>
+                                    </div>
 
-                                    <Col className={"col-2 justify-content-center align-content-center"} style={{padding: "0"}}>
-                                        <Row style={{margin: "50px 10px 50px 10px"}}>
-                                            <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                Star
-                                            </div>
-                                        </Row>
-                                        <Row>
-                                            <Row style={{margin: "50px 10px 50px 10px"}}>
-                                                <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                    Star
-                                                </div>
-                                            </Row>
-                                            <Row style={{margin: "50px 10px 50px 10px"}}>
-                                                <div style={{width: "150px", height: "150px", backgroundColor: "grey", borderRadius: "100px"}}>
-                                                    Star
-                                                </div>
-                                            </Row>
-                                        </Row>
-                                    </Col>
-                                </Row>
+                                    <div style={{width: "125px", height: "125px", lineHeight: "125px",
+                                        backgroundColor: "grey", borderRadius: "100px", marginTop: "5px"}}
+                                        onClick={() => goToObjectPage("Black Hole")}>
+                                        <p style={{color: "white", fontWeight: "bold"}}>Black Hole</p>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
 
-                                <Row style={{margin: "3%"}}>
-                                    <Col>
-                                        <Button className={"bg-light"} style={{color: "black", width: "25%"}} onClick={() => this.props.history.push('/rate')}>Finish</Button>
-                                    </Col>
-                                </Row>
-                            </Container>
+                    <Row style={{margin: "3%"}}>
+                        <Col>
+                            <Button className={"bg-light"} style={{color: "black", width: "25%"}}
+                                    onClick={() => this.props.history.push({
+                                        pathname: '/about',
+                                        state: { popupOpened: true }
+                                    })}>Finish</Button>
                         </Col>
                     </Row>
                 </Container>

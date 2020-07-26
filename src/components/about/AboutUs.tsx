@@ -1,16 +1,18 @@
 import React from 'react';
 import banner from "./aboutusbanner.png";
-import Button from "react-bootstrap/Button";
 import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
+import RatePopup from "../shared/modals/RatePopup";
 
 
-class AboutUs extends React.Component {
+class AboutUs extends React.Component<any, any> {
     render() {
         return (
             <>
+                {this.props.location.state.popupOpened && <RatePopup />}
+
                 <div className="about-banner">
-                    <img  className="about-banner"  src={banner} width={"100%"} height={"100%"} />
+                    <img  className="about-banner" src={banner} width={"100%"} height={"100%"} />
 
                     <div className="about-text">
                         <h1>About Us</h1>
@@ -56,7 +58,6 @@ class AboutUs extends React.Component {
                         <p style={{fontWeight: "bold"}}>
                             Dena, Parisa, Brena fill<br />
                             Explanation, website to science gallery
-
                         </p>
                         <p>
                             In this collaborative project, we propose to design an educational kiosk, using the principles of interactive design,

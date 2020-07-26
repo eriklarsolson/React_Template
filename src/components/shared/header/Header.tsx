@@ -20,14 +20,11 @@ const Header = (props: {location: any }) => {
                         <Nav.Link as={Link} to="/resources" active={location.pathname.startsWith('/resources')}>
                             Resources
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/about" active={location.pathname.startsWith('/about')}>
+                        <Nav.Link as={Link} to={{pathname: '/about', state: { popupOpened: false }}}
+                                  active={location.pathname.startsWith('/about')}>
                             About Us
                         </Nav.Link>
                     </Nav>
-                    {/*<Form inline>*/}
-                    {/*    <FormControl type="text" placeholder="Search" className="mr-sm-2" />*/}
-                    {/*    <Button variant="outline-primary">Search</Button>*/}
-                    {/*</Form>*/}
                 </Navbar.Collapse>
             </Navbar>
         </>
