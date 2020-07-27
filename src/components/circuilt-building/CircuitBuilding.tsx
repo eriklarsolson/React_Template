@@ -6,13 +6,27 @@ import { DndProvider } from 'react-dnd'
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import {SixGridContainer} from "./grid/SixGridContainer";
-import {Redirect} from 'react-router-dom';
+import object1wire from './objective1wire.png'
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
             popupOpened: true,
+            popupTitle: "Level 1 Objective",
+            popupDescriptions: ["Energize the motor of the satellite so the solar panels can face the " +
+                "sun and start collecting more energy. Make sure your circuit can deliver enough power to start the motor " +
+                "and rotate the panels. We recommend using a series circuit, so consult the help page if needed. " +
+                "If you need to make changes to parts of your circuit, click the component you would like to remove " +
+                "and then press the TRASH icon.", "Power up the lights on the satellite so that " +
+            "everyone can see its location as it orbits Earth at high velocities. To best reveal the craft’s position use " +
+            "a flickering light, which typically utilizes a capacitor. We recommend using a parallel circuit, so consult " +
+            "the help page if needed. If you need to make changes to parts of your circuit, click the component you would " +
+            "like to remove and then press the TRASH icon", "Power up the satellite’s radio dish so you can send the " +
+            "collected images and information to mission control back on Earth. Use both series and parallel circuits " +
+            "along with your knowledge from the previous levels to ensure the transmission. Consult the help page if " +
+            "needed. If you need to make changes to parts of your circuit, click the component you would like to remove " +
+            "and then press the TRASH icon."],
             currentLevel: 1,
             levels: [
                 {
@@ -24,7 +38,8 @@ class CircuitBuilding extends React.Component<any, any> {
                         }
                     ]
                 }
-            ]
+            ],
+            gridImages: [object1wire, object1wire, object1wire]
         };
     }
 
@@ -38,6 +53,10 @@ class CircuitBuilding extends React.Component<any, any> {
             } else {
                 this.setState({currentLevel: nextLevel})
             }
+
+            const titleString = "Level " + nextLevel + " Objective"
+            this.setState({popupTitle: titleString})
+            openPopup()
         }
 
         const goToLastLevel = () => {
@@ -48,20 +67,31 @@ class CircuitBuilding extends React.Component<any, any> {
             } else {
                 this.setState({currentLevel: pastLevel})
             }
+
+            const titleString = "Level " + pastLevel + " Objective"
+            this.setState({popupTitle: titleString})
+            openPopup()
+        }
+
+        const openPopup = () => {
+            this.setState({popupOpened: true})
+        }
+
+
+        const closePopup = () => {
+            this.setState({popupOpened: false})
         }
 
         return (
             <>
-                <Popup title={"01 Circuit Building Objective"} description={"Use the circuit components at your disposal " +
-                "to power the numerous parts of your satellite. When you think your circuit is complete, press the play " +
-                "button (or close the switch) to test it. If you need to make changes to parts of your circuit, click the " +
-                "component you would like to remove and then press the TRASH icon. If your configuration is successful, " +
-                "press NEXT to move on to the next level within the circuit activity"} />
+                {this.state.popupOpened && <Popup title={this.state.popupTitle}
+                                                  description={this.state.popupDescriptions[this.state.currentLevel -1]}
+                                                  closePopup={closePopup} />}
 
                 <DndProvider backend={HTML5Backend}>
-                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0"}}>
-                        <Row className={"flex-grow-1"}>
-                            <Col className={"col-2 vh-100"} style={{color: "white"}}>
+                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
+                        <Row className={"flex-grow-1"} style={{margin: "0"}}>
+                            <Col className={"col-2 vh-100"} style={{color: "white", padding: "0"}}>
                                 <Sidebar />
                             </Col>
 
@@ -69,29 +99,29 @@ class CircuitBuilding extends React.Component<any, any> {
                                 <Container fluid style={{margin: "0", padding: "0"}}>
                                     <Row style={{margin: "3%"}}>
                                         <Col>
-                                            <Button style={{backgroundColor: "#3BD186"}} onClick={goToLastLevel}>Back</Button>
+                                            <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
+                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}>Trash</Button>
                                         </Col>
 
                                         <Col>
-                                            <h3>Circuit Board level {this.state.currentLevel}</h3>
+                                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Circuit Board level {this.state.currentLevel}</p>
                                         </Col>
 
-                                        <Col>
+                                        <Col className={"col-4"}>
                                             <Row>
-                                                <Col className={"col-4"}>
-                                                    <Button style={{backgroundColor: "#29405B"}}>Question</Button>
-                                                </Col>
-                                                <Col className={"col-4"}>
-                                                    <Button style={{backgroundColor: "#29405B"}}>Objective</Button>
-                                                </Col>
-                                                <Col className={"col-4"}>
-                                                    <Button style={{backgroundColor: "#29405B"}}>Hide Grid</Button>
+                                                <Col className={"col-3 ml-auto"}>
+                                                    <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Question</Button>
+                                                    <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Objective</Button>
+                                                    <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Hide Grid</Button>
                                                 </Col>
                                             </Row>
                                         </Col>
                                     </Row>
 
-                                    <Row>
+                                    <Row style={{margin: "0"}}>
                                         <Col>
                                             <SixGridContainer />
                                             {/*<CustomDragLayer />*/}
@@ -100,15 +130,17 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                     <Row style={{margin: "3%"}}>
                                         <Col className={"col-2"}>
-                                            <Button style={{backgroundColor: "#3BD186"}}>Trash</Button>
+                                            <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
+                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToLastLevel}>Back</Button>
                                         </Col>
 
-                                        <Col className={"col-2"}>
+                                        <Col className={"justify-content-center align-content center"}>
                                             Volt selector
                                         </Col>
 
-                                        <Col>
-                                            <Button style={{backgroundColor: "#3BD186"}} onClick={goToNextLevel}>Next</Button>
+                                        <Col className={"col-2"}>
+                                            <Button style={{float: "right", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
+                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToNextLevel}>Next</Button>
                                         </Col>
                                     </Row>
                                 </Container>

@@ -2,22 +2,11 @@ import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
 
-class Popup extends React.Component<{ title: string, description: string }, any> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            popupOpened: true
-        };
-    }
-
+class Popup extends React.Component<any, any> {
     render() {
-        const closePopup = () => {
-            this.setState({popupOpened: false})
-        }
-
         return (
-            <Modal show={this.state.popupOpened}
-                   onClick={closePopup}
+            <Modal show="true"
+                   onClick={this.props.closePopup}
                    size="lg"
                     style={{padding: "30px"}}>
                 <Modal.Header closeButton>
@@ -34,7 +23,7 @@ class Popup extends React.Component<{ title: string, description: string }, any>
                         </Row>
 
                         <Row className={"justify-content-center align-content-center"} style={{paddingBottom: "50px"}}>
-                            <Button variant="primary" style={{backgroundColor: "#3BD186", width: "25%"}} onClick={closePopup}>
+                            <Button variant="primary" style={{backgroundColor: "#3BD186", width: "25%"}} onClick={this.props.closePopup}>
                                 Got it!
                             </Button>
                         </Row>

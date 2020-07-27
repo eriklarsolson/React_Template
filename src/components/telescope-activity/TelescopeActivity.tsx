@@ -25,37 +25,39 @@ class TelescopeActivity extends React.Component<any, any> {
                             <Container fluid style={{margin: "0", padding: "0"}}>
                                 <Row style={{margin: "3%"}}>
                                     <Col>
-                                        <Button style={{backgroundColor: "#3BD186"}} onClick={() => this.props.history.push('/metal-engraving')}>Back</Button>
+                                        <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
+                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}>Trash</Button>
                                     </Col>
 
                                     <Col>
-                                        <h3>Telescope Activity</h3>
+                                        <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Telescope Activity</p>
                                     </Col>
 
                                     <Col>
-                                        <Row>
-                                            <Col className={"col-4"}>
-                                                <Button style={{backgroundColor: "#29405B"}}>Question</Button>
-                                            </Col>
-                                        </Row>
+                                        <Button style={{float: "right", backgroundColor: "#29405B", width: "150px", marginRight: "50px",
+                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}>Question</Button>
                                     </Col>
                                 </Row>
 
                                 <Row>
                                     <Col className={"justify-content-center align-content-center"}>
-                                        <div style={{width: "600px", height: "600px", backgroundColor: "grey"}}>
+                                        <div style={{width: "600px", height: "600px", backgroundColor: "grey", margin: "auto"}}>
 
                                         </div>
                                     </Col>
                                 </Row>
 
                                 <Row style={{margin: "3%"}}>
-                                    <Col className={"col-2"}>
-                                        <Button style={{backgroundColor: "#3BD186"}}>Trash</Button>
+                                    <Col>
+                                        <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
+                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                                onClick={() => this.props.history.push('/metal-engraving')}>Back</Button>
                                     </Col>
 
                                     <Col>
-                                        <Button style={{backgroundColor: "#3BD186"}} onClick={() => this.props.history.push('/stellar-cycle')}>Next</Button>
+                                        <Button style={{float: "right", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
+                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                                onClick={() => this.props.history.push('/stellar-cycle')}>Next</Button>
                                     </Col>
                                 </Row>
                             </Container>

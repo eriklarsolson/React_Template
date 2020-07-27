@@ -3,13 +3,32 @@ import banner from "./aboutusbanner.png";
 import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
 import RatePopup from "../shared/modals/RatePopup";
-
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 class AboutUs extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+        }
+    }
+
     render() {
         return (
             <>
                 {this.props.location.state.popupOpened && <RatePopup />}
+
+                <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover />
 
                 <div className="about-banner">
                     <img  className="about-banner" src={banner} width={"100%"} height={"100%"} />

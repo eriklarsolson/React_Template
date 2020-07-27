@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
-import {Link} from "react-router-dom";
+import './StellarCycle.scss'
 
 class StellarCycle extends React.Component<any, any> {
     constructor(props: any) {
@@ -14,28 +14,30 @@ class StellarCycle extends React.Component<any, any> {
 
 
     render() {
+        const closePopup = () => {
+            this.setState({popupOpened: false})
+        }
+
         const goToObjectPage = (title: string) => {
             this.props.history.push('/object-page/' + title)
         }
 
         return (
             <>
-                <Popup title={"03 Stellar Life Cycle"} description={"DESCRIPTION HERE"} />
+                {this.state.popupOpened && <Popup title={"03 Stellar Life Cycle"}
+                                                  description={"DESCRIPTION HERE"}
+                                                  closePopup={closePopup} />}
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0"}}>
                     <Row style={{margin: "3%"}}>
-                        <Col className={"col-1"}>
-                            <Button style={{backgroundColor: "#3BD186"}} onClick={() => this.props.history.push('/telescope-activity')}>Back</Button>
-                        </Col>
-
                         <Col>
-                            <h3>Stellar Life Cycle</h3>
+                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
                         </Col>
                     </Row>
 
                     <Row>
                         <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
-                            <div className={"justify-content-center align-content-center"} style={{width: "200px",
+                            <div className={"justify-content-center align-content-center  stellar-circle stellar-circle"} style={{width: "200px",
                                 height: "200px", lineHeight: "200px", backgroundColor: "grey", borderRadius: "100px"}}
                                 onClick={() => goToObjectPage("Nebula")}>
                                 <p style={{color: "white", fontWeight: "bold"}}>Nebula</p>
@@ -44,7 +46,7 @@ class StellarCycle extends React.Component<any, any> {
 
                         <Col style={{padding: "0"}}>
                             <Row className={"justify-content-center align-content-center"} style={{marginBottom: "5%"}}>
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center  stellar-circle"} style={{padding: "0"}}>
                                     <div style={{width: "150px", height: "150px", lineHeight: "150px",
                                         backgroundColor: "grey", borderRadius: "100px"}}
                                         onClick={() => goToObjectPage("Avg Star")}>
@@ -52,7 +54,7 @@ class StellarCycle extends React.Component<any, any> {
                                     </div>
                                 </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                     <div style={{width: "150px", height: "150px", lineHeight: "150px",
                                         backgroundColor: "grey", borderRadius: "100px"}}
                                         onClick={() => goToObjectPage("Red Giant")}>
@@ -60,7 +62,7 @@ class StellarCycle extends React.Component<any, any> {
                                     </div>
                                 </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                     <div style={{width: "150px", height: "150px", lineHeight: "150px",
                                         backgroundColor: "grey", borderRadius: "100px"}}
                                         onClick={() => goToObjectPage("Planetary Nebula")}>
@@ -68,7 +70,7 @@ class StellarCycle extends React.Component<any, any> {
                                     </div>
                                 </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                     <div style={{width: "125px", height: "125px", lineHeight: "125px",
                                         backgroundColor: "grey", borderRadius: "100px"}}
                                         onClick={() => goToObjectPage("White Dwarf")}>
@@ -78,7 +80,7 @@ class StellarCycle extends React.Component<any, any> {
                             </Row>
 
                             <Row className={"justify-content-center align-content-center"} >
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                         <div style={{width: "150px", height: "150px", lineHeight: "150px",
                                             backgroundColor: "grey", borderRadius: "100px"}}
                                              onClick={() => goToObjectPage("Massive Star")}>
@@ -86,7 +88,7 @@ class StellarCycle extends React.Component<any, any> {
                                         </div>
                                 </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                         <div style={{width: "150px", height: "150px", lineHeight: "150px",
                                             backgroundColor: "grey", borderRadius: "100px"}}
                                              onClick={() => goToObjectPage("Red Supergiant")}>
@@ -94,7 +96,7 @@ class StellarCycle extends React.Component<any, any> {
                                         </div>
                                 </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                         <div style={{width: "150px", height: "150px", lineHeight: "150px",
                                             backgroundColor: "grey", borderRadius: "100px"}}
                                              onClick={() => goToObjectPage("Supernova")}>
@@ -102,7 +104,7 @@ class StellarCycle extends React.Component<any, any> {
                                         </div>
                                 </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center"} style={{padding: "0"}}>
+                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                     <div style={{width: "125px", height: "125px", lineHeight: "125px",
                                         backgroundColor: "grey", borderRadius: "100px", marginBottom: "5px"}}
                                         onClick={() => goToObjectPage("Neutron Star")}>
@@ -121,7 +123,14 @@ class StellarCycle extends React.Component<any, any> {
 
                     <Row style={{margin: "3%"}}>
                         <Col>
-                            <Button className={"bg-light"} style={{color: "black", width: "25%"}}
+                            <Button style={{color: "black", width: "15%", backgroundColor: "#3BD186",
+                                float: "left", borderRadius: "20px", fontSize: "22px", fontWeight: "bold"}}
+                                    onClick={() => this.props.history.push('/telescope-activity')}>Back</Button>
+                        </Col>
+
+                        <Col>
+                            <Button className={"bg-light"} style={{color: "black", width: "15%",
+                                float: "right", borderRadius: "20px", fontSize: "22px", fontWeight: "bold"}}
                                     onClick={() => this.props.history.push({
                                         pathname: '/about',
                                         state: { popupOpened: true }

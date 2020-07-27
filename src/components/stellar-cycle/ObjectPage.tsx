@@ -20,12 +20,21 @@ class ObjectPage extends React.Component<any, any> {
                             </div>
                         </Col>
 
-                        <Col className={"vh-100"} style={{backgroundColor: "#42949F", padding: "5%"}}>
+                        <Col className={"vh-100"} style={{backgroundColor: "#42949F"}}>
                             <Row>
+                                <Col>
+                                    <Button variant="primary" style={{float: "right", backgroundColor: "#3BD186", width: "100px", margin: "10px",
+                                        borderRadius: "20px", fontSize: "12px"}} onClick={() => this.props.history.push('/stellar-cycle')}>
+                                        Go Back
+                                    </Button>
+                                </Col>
+                            </Row>
+
+                            <Row style={{paddingTop: "5%", paddingLeft: "5%"}}>
                                 <h1>{this.props.match.params.title}</h1>
                             </Row>
 
-                            <Row>
+                            <Row style={{paddingLeft: "5%"}}>
                                 <p>{getObjectInfo()}</p>
                             </Row>
                         </Col>
