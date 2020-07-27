@@ -7,11 +7,14 @@ import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import {SixGridContainer} from "./grid/SixGridContainer";
 import object1wire from './objective1wire.png'
+import CircuitPopup from "../shared/modals/CircuitPopup";
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
+            showGrid: true,
+            circuitPopupOpened: false,
             popupOpened: true,
             popupTitle: "Level 1 Objective",
             popupDescriptions: ["Energize the motor of the satellite so the solar panels can face the " +
@@ -82,11 +85,21 @@ class CircuitBuilding extends React.Component<any, any> {
             this.setState({popupOpened: false})
         }
 
+        const closeCircuitPopup = () => {
+            this.setState({circuitPopupOpened: false})
+        }
+
+        const openCircuitPopup = () => {
+            this.setState({circuitPopupOpened: true})
+        }
+
         return (
             <>
-                {this.state.popupOpened && <Popup title={this.state.popupTitle}
-                                                  description={this.state.popupDescriptions[this.state.currentLevel -1]}
-                                                  closePopup={closePopup} />}
+                <CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={closeCircuitPopup} />
+
+                <Popup open={this.state.popupOpened} title={this.state.popupTitle}
+                                                  description={this.state.popupDescriptions[this.state.currentLevel - 1]}
+                                                  closePopup={closePopup} />
 
                 <DndProvider backend={HTML5Backend}>
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
@@ -111,9 +124,9 @@ class CircuitBuilding extends React.Component<any, any> {
                                             <Row>
                                                 <Col className={"col-3 ml-auto"}>
                                                     <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Question</Button>
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openCircuitPopup}>Question</Button>
                                                     <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Objective</Button>
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openPopup}>Objective</Button>
                                                     <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
                                                         borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Hide Grid</Button>
                                                 </Col>
@@ -123,7 +136,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                     <Row style={{margin: "0"}}>
                                         <Col>
-                                            <SixGridContainer />
+                                            <SixGridContainer grid={"1px solid gray"} />
                                             {/*<CustomDragLayer />*/}
                                         </Col>
                                     </Row>

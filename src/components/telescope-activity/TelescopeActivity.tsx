@@ -15,7 +15,7 @@ class TelescopeActivity extends React.Component<any, any> {
     render() {
         return (
             <>
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0"}}>
+                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
                             <Sidebar />

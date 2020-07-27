@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 class Popup extends React.Component<any, any> {
     render() {
         return (
-            <Modal show="true"
+            <Modal show={this.props.open}
                    onClick={this.props.closePopup}
                    size="lg"
                     style={{padding: "30px"}}>

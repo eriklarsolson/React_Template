@@ -3,6 +3,7 @@ import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
+import {SketchPad} from "./Sketchpad";
 
 class MetalEngraving extends React.Component<any, any> {
     constructor(props: any) {
@@ -14,21 +15,27 @@ class MetalEngraving extends React.Component<any, any> {
 
 
     render() {
+        const openPopup = () => {
+            this.setState({popupOpened: true})
+        }
+
+
         const closePopup = () => {
             this.setState({popupOpened: false})
         }
 
         return (
             <>
-                {this.state.popupOpened && <Popup title={"02 Laser and Lenses Objective"}
-                                                  description={"Using lasers, prisms, and lenses, create an " +
-                                                      "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
-                                                      "beneficial to the engraving. You can use the UNDO and RESET buttons to change any mistakes on your design. " +
-                                                      "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
-                                                      "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
-                                                  closePopup={closePopup} />}
+                <Popup title={"02 Laser and Lenses Objective"}
+                       open={this.state.popupOpened}
+                       description={"Using lasers, prisms, and lenses, create an " +
+                          "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
+                          "beneficial to the engraving. You can use the UNDO and RESET buttons to change any mistakes on your design. " +
+                          "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
+                          "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
+                       closePopup={closePopup} />
 
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0"}}>
+                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
                             <Sidebar />
@@ -66,9 +73,10 @@ class MetalEngraving extends React.Component<any, any> {
 
                                 <Row>
                                     <Col className={"justify-content-center align-content-center"} >
-                                        <div style={{width: "600px", height: "600px", backgroundColor: "grey", margin: "auto"}}>
+                                        {/*<div style={{width: "600px", height: "600px", backgroundColor: "grey", margin: "auto"}}>*/}
 
-                                        </div>
+                                        {/*</div>*/}
+                                        <SketchPad />
                                     </Col>
                                 </Row>
 

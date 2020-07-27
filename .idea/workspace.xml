@@ -10,26 +10,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/objective1wire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/bored.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/happy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/neutral.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/sad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/smart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.scss" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/SketchPad.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Ellipse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Line.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Pencil.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Rectangle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/CircuitPopup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/modals/RatePopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/RatePopup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
     </list>
@@ -54,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/stellar-cycle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/shared/modals" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -70,11 +67,11 @@
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid\components" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid2" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid2\components" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid\components" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -95,6 +92,14 @@
       <workItem from="1595248635088" duration="17716000" />
       <workItem from="1595420568531" duration="14828000" />
     </task>
+    <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
+      <created>1595814945436</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595814945436</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +116,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)" />
+    <option name="LAST_COMMIT_MESSAGE" value="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -149,11 +158,15 @@
     </state>
     <state width="1480" height="168" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1595717092156" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594947472940" />
-    <state x="284" y="256" width="585" height="534" key="find.popup" timestamp="1595795200667">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1595814948473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595814948473" />
+    <state x="284" y="256" width="585" height="624" key="find.popup" timestamp="1595819670827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
-    <state x="284" y="256" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595795200667" />
+    <state x="284" y="256" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595819670827" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -24,11 +24,12 @@ class StellarCycle extends React.Component<any, any> {
 
         return (
             <>
-                {this.state.popupOpened && <Popup title={"03 Stellar Life Cycle"}
-                                                  description={"DESCRIPTION HERE"}
-                                                  closePopup={closePopup} />}
+                <Popup title={"03 Stellar Life Cycle"}
+                       open={this.state.popupOpened}
+                       description={"DESCRIPTION HERE"}
+                       closePopup={closePopup} />
 
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0"}}>
+                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row style={{margin: "3%"}}>
                         <Col>
                             <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>

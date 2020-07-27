@@ -25,7 +25,7 @@ class RatePopup extends React.Component<any, any> {
         }
 
         const closePopup = () => {
-            this.setState({toastSuccess: true, popupOpened: false})
+            this.setState({popupOpened: false})
         }
 
         return (

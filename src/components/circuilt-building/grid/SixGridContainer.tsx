@@ -12,14 +12,17 @@ import object1wire from '../objective1wire.png'
 const containerStyle: React.CSSProperties = {
     width: 500,
     height: 500,
-    border: '1px solid gray',
 }
 
 interface BoxMap {
     [key: string]: { x: number; y: number; type: string }
 }
 
-export const SixGridContainer: React.FC = () => {
+export interface GridContainerProps {
+    grid: string
+}
+
+export const SixGridContainer: React.FC<GridContainerProps> = ({grid}) => {
     const [boxes, setBoxes] = useState<BoxMap>({
         a: { x: 20, y: 80, type: 'battery' },
         b: { x: 180, y: 20, type: 'Drag me too' },
