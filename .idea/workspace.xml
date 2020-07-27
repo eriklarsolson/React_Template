@@ -11,24 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/SketchPad.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Ellipse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Line.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Pencil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Rectangle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/CircuitPopup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/RatePopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/RatePopup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/SketchPad.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/SketchPad.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +77,7 @@
       <workItem from="1595188781813" duration="18644000" />
       <workItem from="1595248635088" duration="17716000" />
       <workItem from="1595420568531" duration="14828000" />
+      <workItem from="1595854996445" duration="7955000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -130,10 +117,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595382862279" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595812761386">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595868197561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595812761386" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595868197561" />
     <state x="629" y="298" key="EditFileWatcherDialog" timestamp="1594947783720">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

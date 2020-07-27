@@ -3,13 +3,19 @@ import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
-import {SketchPad} from "./Sketchpad";
+import {SketchPad, TOOL_ELLIPSE, TOOL_PENCIL, TOOL_RECTANGLE} from "./Sketchpad";
 
 class MetalEngraving extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
             popupOpened: true,
+            tool:TOOL_PENCIL,
+            size: 2,
+            color: '#000000',
+            fill: false,
+            fillColor: '#444444',
+            items: []
         };
     }
 
@@ -22,6 +28,10 @@ class MetalEngraving extends React.Component<any, any> {
 
         const closePopup = () => {
             this.setState({popupOpened: false})
+        }
+
+        const setTool = (tool: string) => {
+            this.setState({tool: tool})
         }
 
         return (
@@ -38,7 +48,7 @@ class MetalEngraving extends React.Component<any, any> {
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
-                            <Sidebar />
+                            <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size} setTool={setTool} />
                         </Col>
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
@@ -76,7 +86,16 @@ class MetalEngraving extends React.Component<any, any> {
                                         {/*<div style={{width: "600px", height: "600px", backgroundColor: "grey", margin: "auto"}}>*/}
 
                                         {/*</div>*/}
-                                        <SketchPad />
+                                        <SketchPad
+                                            width={500}
+                                            height={500}
+                                            animate={true}
+                                            size={this.state.size}
+                                            color={this.state.color}
+                                            fillColor={this.state.fill ? this.state.fillColor : ''}
+                                            items={this.state.items}
+                                            tool={this.state.tool}
+                                        />
                                     </Col>
                                 </Row>
 
@@ -88,11 +107,30 @@ class MetalEngraving extends React.Component<any, any> {
                                     </Col>
 
                                     <Col>
-                                        Color Selector
+                                        {/*TODO - Color Selector*/}
+
+                                        {(this.state.tool === TOOL_ELLIPSE || this.state.tool === TOOL_RECTANGLE) ?
+                                            <div>
+                                                <label htmlFor="">Fill In:</label>
+                                                <input type="checkbox" value={this.state.fill} style={{margin:'0 8'}}
+                                                       onChange={(e) => this.setState({fill: e.target.checked})} />
+                                                {this.state.fill ? <span>
+                                                  <label htmlFor="">with color:</label>
+                                                  <input type="color" value={this.state.fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />
+                                                </span> : ''}
+                                            </div> : ''}
+                                        <div className="options" style={{marginBottom:20}}>
+                                            <label htmlFor="">Color: </label>
+                                            <input type="color" value={this.props.color} onChange={(e) => this.setState({color: e.target.value})} />
+                                        </div>
                                     </Col>
 
                                     <Col>
-                                        Shapes of filters
+                                        {/*TODO - Shapes of filters*/}
+                                        <div className="options" style={{marginBottom:20}}>
+                                            <label htmlFor="">Size: </label>
+                                            <input min="1" max="20" type="range" value={this.props.size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />
+                                        </div>
                                     </Col>
 
                                     <Col className={"col-2"}>
