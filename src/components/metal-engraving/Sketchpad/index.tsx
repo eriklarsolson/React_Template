@@ -5,8 +5,6 @@ export {
 
 // TOOLS
 export {
-    Pencil,
-    TOOL_PENCIL,
     Line,
     TOOL_LINE,
     Ellipse,

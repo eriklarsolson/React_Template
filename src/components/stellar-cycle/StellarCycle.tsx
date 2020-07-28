@@ -3,6 +3,7 @@ import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import './StellarCycle.scss'
+import stellarBackground from './stellarBackground.png';
 
 class StellarCycle extends React.Component<any, any> {
     constructor(props: any) {
@@ -29,10 +30,10 @@ class StellarCycle extends React.Component<any, any> {
                        description={"DESCRIPTION HERE"}
                        closePopup={closePopup} />
 
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
+                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${stellarBackground})`}}>
                     <Row style={{margin: "3%"}}>
                         <Col>
-                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
+                            <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
                         </Col>
                     </Row>
 

@@ -6,7 +6,9 @@ import { DndProvider } from 'react-dnd'
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import {SixGridContainer} from "./grid/SixGridContainer";
-import object1wire from './objective1wire.png'
+import objective1wire from './objective1wire.png'
+import objective2wire from './objective2wire.png'
+import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
 
 class CircuitBuilding extends React.Component<any, any> {
@@ -42,7 +44,7 @@ class CircuitBuilding extends React.Component<any, any> {
                     ]
                 }
             ],
-            gridImages: [object1wire, object1wire, object1wire]
+            gridImages: [objective1wire, objective2wire, objective3wire]
         };
     }
 
@@ -136,7 +138,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                     <Row style={{margin: "0"}}>
                                         <Col>
-                                            <SixGridContainer grid={"1px solid gray"} />
+                                            <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]} grid={"1px solid gray"} />
                                             {/*<CustomDragLayer />*/}
                                         </Col>
                                     </Row>

@@ -1,10 +1,5 @@
 
 export {
-    default as Pencil,
-    TOOL_PENCIL
-} from './Pencil';
-
-export {
     default as Line,
     TOOL_LINE
 } from './Line';

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { findDOMNode } from 'react-dom'
-import { Pencil, TOOL_PENCIL, Line, TOOL_LINE, Ellipse, TOOL_ELLIPSE, Rectangle, TOOL_RECTANGLE } from './tools'
+import { Line, TOOL_LINE, Ellipse, TOOL_ELLIPSE, Rectangle, TOOL_RECTANGLE } from './tools'
+import {Col} from "react-bootstrap";
 
 export const toolsMap = {
-    [TOOL_PENCIL]: Pencil,
     [TOOL_LINE]: Line,
     [TOOL_RECTANGLE]: Rectangle,
     [TOOL_ELLIPSE]: Ellipse
@@ -11,8 +11,6 @@ export const toolsMap = {
 
 
 export interface propTypes {
-    width: number,
-    height: number,
     items: [],
     animate: boolean,
     canvasClassName: string,
@@ -28,38 +26,37 @@ export interface propTypes {
     debounceTime: number,
 }
 
-export default class SketchPad<propTypes> extends Component<any, any> {
+export default class SketchPad extends Component<any, any> {
+    canvasRef: any;
+    tool: any;
     constructor(props: any) {
         super(props);
         this.state = {
-            tool: null,
             interval: null,
             defaultProps: {
                 width: 500,
                 height: 500,
-                color: '#000',
-                size: 5,
-                fillColor: 'black',
                 canvasClassName: 'canvas',
                 debounceTime: 1000,
                 animate: true,
-                tool: TOOL_PENCIL,
+                tool: TOOL_LINE,
                 toolsMap
             },
-            // initTool: this.initTool,
-            onMouseDown: this.onMouseDown,
-            onMouseMove: this.onMouseMove,
-            onDebouncedMove: this.onDebouncedMove,
-            onMouseUp: this.onMouseUp,
-            canvasRef: React.createRef(),
-            canvas: null,
         };
+
+        this.canvasRef = React.createRef();
+    }
+
+    componentDidMount() {
+        this.context = this.canvasRef.current.getContext('2d');
+
+        this.initTool(this.state.defaultProps.tool);
     }
 
 
-
-    componentDidMount() {
-        this.initTool(this.state.defaultProps.tool);
+    initTool = (tool: React.ReactText) => {
+        // this.setState({tool: this.state.defaultProps.toolsMap[tool](this.context)})
+        this.tool = this.state.defaultProps.toolsMap[tool](this.context)
     }
 
     // @ts-ignore
@@ -73,58 +70,65 @@ export default class SketchPad<propTypes> extends Component<any, any> {
         this.initTool(tool)
     }
 
-    initTool(tool: React.ReactText) {
-        this.setState({tool: this.state.defaultProps.toolsMap[tool](this.context)})
-    }
-
-    onMouseDown(e: { clientX: number; clientY: number; }) {
-        const data = this.state.tool.onMouseDown(...this.getCursorPosition(e), this.state.defaultProps.color, this.state.defaultProps.size, this.state.defaultProps.fillColor);
-        data && data[0] && this.props.onItemStart && this.props.onItemStart.apply(null, data);
-        if (this.props.onDebouncedItemChange) {
-            this.setState({interval: setInterval(this.state.onDebouncedMove, this.state.props.debounceTime)});
-        }
-    }
-
-    onDebouncedMove() {
-        if (typeof this.state.tool.onDebouncedMouseMove == 'function' && this.props.onDebouncedItemChange) {
-            this.props.onDebouncedItemChange.apply(null, this.state.tool.onDebouncedMouseMove());
-        }
-    }
-
-    onMouseMove(e: { clientX: number; clientY: number; }) {
-        const data = this.state.tool.onMouseMove(...this.getCursorPosition(e));
-        data && data[0] && this.props.onEveryItemChange && this.props.onEveryItemChange.apply(null, data);
-    }
-
-    onMouseUp(e: { clientX: number; clientY: number; }) {
-        const data = this.state.tool.onMouseUp(...this.getCursorPosition(e));
-        data && data[0] && this.props.onCompleteItem && this.props.onCompleteItem.apply(null, data);
-        if (this.props.onDebouncedItemChange) {
-            clearInterval(this.state.interval);
-            this.setState({interval: null})
-        }
-    }
-
-    getCursorPosition(e: { clientX: number; clientY: number; }) {
-        const {top, left} = this.state.canvas.getBoundingClientRect();
-        return [
-            e.clientX - left,
-            e.clientY - top
-        ];
-    }
-
     render() {
+        const onMouseDown = (e: { clientX: number; clientY: number; }) => {
+            const data = this.tool.onMouseDown(...getCursorPosition(e), this.state.defaultProps.color,
+                this.state.defaultProps.size, this.state.defaultProps.fillColor, this.context);
+            data && data[0] && this.props.onItemStart && this.props.onItemStart.apply(null, data);
+            if (this.props.onDebouncedItemChange) {
+                this.setState({interval: setInterval(this.state.onDebouncedMove, this.state.props.debounceTime)});
+            }
+        }
+
+        const onDebouncedMove = () => {
+            if (typeof this.tool.onDebouncedMouseMove == 'function' && this.props.onDebouncedItemChange) {
+                this.props.onDebouncedItemChange.apply(null, this.state.tool.onDebouncedMouseMove());
+            }
+        }
+
+        const onMouseMove = (e: { clientX: number; clientY: number; }) => {
+            const data = this.tool.onMouseMove(...getCursorPosition(e), this.context);
+            data && data[0] && this.props.onEveryItemChange && this.props.onEveryItemChange.apply(null, data);
+        }
+
+        const onMouseUp = (e: { clientX: number; clientY: number; }) => {
+            const data = this.tool.onMouseUp(...getCursorPosition(e), this.context);
+            data && data[0] && this.props.onCompleteItem && this.props.onCompleteItem.apply(null, data);
+            if (this.props.onDebouncedItemChange) {
+                clearInterval(this.state.interval);
+                this.setState({interval: null})
+            }
+        }
+
+        const getCursorPosition = (e: { clientX: number; clientY: number; }) => {
+            const {top, left} = this.canvasRef.current.getBoundingClientRect();
+            return [
+                e.clientX - left,
+                e.clientY - top
+            ];
+        }
+
         return (
+            <>
             <canvas
-                ref={this.state.canvasRef}
+                ref={this.canvasRef}
                 className={this.state.canvasClassName}
-                onMouseDown={this.state.onMouseDown}
-                onMouseMove={this.state.onMouseMove}
-                onMouseOut={this.state.onMouseUp}
-                onMouseUp={this.state.onMouseUp}
-                width={this.state.width}
-                height={this.state.height}
+                onMouseDown={onMouseDown}
+                onMouseMove={onMouseMove}
+                onMouseOut={onMouseUp}
+                onMouseUp={onMouseUp}
+                width={this.props.width}
+                height={this.props.height}
+                style={{backgroundColor: "white"}}
             />
+
+                <button
+                    style={{width: "100px", height: "100px"}}
+                    className={this.props.tool === TOOL_LINE  ? 'item-active' : 'item'}
+                    onClick={() => this.props.setTool(TOOL_LINE)}
+                >Line</button>
+
+            </>
         )
     }
 }

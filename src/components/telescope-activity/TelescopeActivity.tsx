@@ -41,7 +41,7 @@ class TelescopeActivity extends React.Component<any, any> {
 
                                 <Row>
                                     <Col className={"justify-content-center align-content-center"}>
-                                        <div style={{width: "600px", height: "600px", backgroundColor: "grey", margin: "auto"}}>
+                                        <div style={{width: "800px", height: "400px", backgroundColor: "grey", margin: "auto"}}>
 
                                         </div>
                                     </Col>

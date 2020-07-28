@@ -7,7 +7,6 @@ import {useDrop} from "react-dnd";
 import {DragItem} from "../../shared/models/DragItem";
 import {snapToGrid as doSnapToGrid} from "../grid2/Functionality";
 import {Container, Row, Col} from "react-bootstrap";
-import object1wire from '../objective1wire.png'
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -19,10 +18,11 @@ interface BoxMap {
 }
 
 export interface GridContainerProps {
-    grid: string
+    grid: string;
+    objectiveImage: any;
 }
 
-export const SixGridContainer: React.FC<GridContainerProps> = ({grid}) => {
+export const SixGridContainer: React.FC<GridContainerProps> = ({grid, objectiveImage}) => {
     const [boxes, setBoxes] = useState<BoxMap>({
         a: { x: 20, y: 80, type: 'battery' },
         b: { x: 180, y: 20, type: 'Drag me too' },
@@ -54,7 +54,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({grid}) => {
                         </div>
                     </Col>
                     <Col className={"col-1"} style={{padding: "0", margin: "0"}}>
-                        <img src={object1wire} width={"200px"} />
+                        <img src={objectiveImage} width={"200px"} />
                     </Col>
                 </Row>
             </Container>

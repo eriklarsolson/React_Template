@@ -1,21 +1,23 @@
-import React, {useState} from "react";
+import React from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
-import {SketchPad, TOOL_ELLIPSE, TOOL_PENCIL, TOOL_RECTANGLE} from "./Sketchpad";
+import {SketchPad, TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE} from "./Sketchpad";
+import Canvas from "./Canvas";
 
 class MetalEngraving extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
             popupOpened: true,
-            tool:TOOL_PENCIL,
-            size: 2,
+            tool:TOOL_LINE,
+            size: 10,
             color: '#000000',
             fill: false,
             fillColor: '#444444',
-            items: []
+            items: [],
+            canvasRef: React.createRef()
         };
     }
 
@@ -25,13 +27,18 @@ class MetalEngraving extends React.Component<any, any> {
             this.setState({popupOpened: true})
         }
 
-
         const closePopup = () => {
             this.setState({popupOpened: false})
         }
 
         const setTool = (tool: string) => {
             this.setState({tool: tool})
+        }
+
+        const clearCanvas = () => {
+            const canvas: HTMLCanvasElement = this.state.canvasRef.current;
+            const context = canvas.getContext('2d');
+            context?.clearRect(0, 0, canvas.width, canvas.height);
         }
 
         return (
@@ -56,7 +63,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 <Row style={{margin: "3%"}}>
                                     <Col>
                                         <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}>Trash</Button>
+                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={clearCanvas}>Clear</Button>
                                     </Col>
 
                                     <Col>
@@ -73,7 +80,7 @@ class MetalEngraving extends React.Component<any, any> {
                                             </Col>
                                             <Col className={"col-3"}>
                                                 <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Objective</Button>
+                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openPopup}>Objective</Button>
                                                 <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
                                                     borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>View Point</Button>
                                             </Col>
@@ -83,19 +90,21 @@ class MetalEngraving extends React.Component<any, any> {
 
                                 <Row>
                                     <Col className={"justify-content-center align-content-center"} >
-                                        {/*<div style={{width: "600px", height: "600px", backgroundColor: "grey", margin: "auto"}}>*/}
+
+                                        <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool} color={this.state.color} size={this.state.size} />
 
                                         {/*</div>*/}
-                                        <SketchPad
-                                            width={500}
-                                            height={500}
-                                            animate={true}
-                                            size={this.state.size}
-                                            color={this.state.color}
-                                            fillColor={this.state.fill ? this.state.fillColor : ''}
-                                            items={this.state.items}
-                                            tool={this.state.tool}
-                                        />
+                                        {/*<SketchPad*/}
+                                        {/*    setTool={setTool}*/}
+                                        {/*    width={500}*/}
+                                        {/*    height={500}*/}
+                                        {/*    animate={true}*/}
+                                        {/*    size={this.state.size}*/}
+                                        {/*    color={this.state.color}*/}
+                                        {/*    fillColor={this.state.fill ? this.state.fillColor : ''}*/}
+                                        {/*    items={this.state.items}*/}
+                                        {/*    tool={this.state.tool}*/}
+                                        {/*/>*/}
                                     </Col>
                                 </Row>
 
@@ -127,6 +136,7 @@ class MetalEngraving extends React.Component<any, any> {
 
                                     <Col>
                                         {/*TODO - Shapes of filters*/}
+
                                         <div className="options" style={{marginBottom:20}}>
                                             <label htmlFor="">Size: </label>
                                             <input min="1" max="20" type="range" value={this.props.size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />
