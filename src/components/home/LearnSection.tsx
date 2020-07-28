@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import hubble from './hubble.png';
-import deer from './deer.jpg';
 import './Home.scss';
 import {LearnSectionModel} from "../shared/models/LearnSectionModel";
 
@@ -21,7 +20,7 @@ class LearnSection extends React.Component<any, any> {
     render() {
         let images = [
             hubble,
-            deer,
+            hubble,
             hubble
         ]
 

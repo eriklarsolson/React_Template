@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import {TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE} from "./Sketchpad/tools";
 import canvasBackground from './canvasBackground.png'
+import {TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE, TOOL_ERASER} from "./MetalEngraving";
 
 interface CanvasProps {
     width: number;
@@ -23,12 +23,11 @@ const Canvas = ({ width, height, canvasRef, tool, color, size }: CanvasProps) =>
 
     const startPaint = useCallback((event: MouseEvent) => {
         const coordinates = getCoordinates(event);
-        console.log("test2")
         if (coordinates) {
             setMousePosition(coordinates);
             setIsPainting(true);
         }
-    }, []);
+    }, [mousePosition]);
 
     useEffect(() => {
         if (!canvasRef.current) {
@@ -46,10 +45,18 @@ const Canvas = ({ width, height, canvasRef, tool, color, size }: CanvasProps) =>
         (event: MouseEvent) => {
             if (isPainting) {
                 const newMousePosition = getCoordinates(event);
-                setNewMousePosition(newMousePosition);
+
+                if(tool === TOOL_LINE || tool === TOOL_ERASER) {
+                    if (mousePosition && newMousePosition) {
+                        draw(mousePosition, newMousePosition);
+                        setMousePosition(newMousePosition);
+                    }
+                } else {
+                    setNewMousePosition(newMousePosition);
+                }
             }
         },
-        [isPainting, mousePosition]
+        [isPainting, mousePosition, newMousePosition]
     );
 
     useEffect(() => {
@@ -63,18 +70,16 @@ const Canvas = ({ width, height, canvasRef, tool, color, size }: CanvasProps) =>
         };
     }, [paint]);
 
+    //TODO - Need to check types if its continuous drawing or like rectangle
     const exitPaint = useCallback(() => {
-        console.log("test2")
-        console.log(mousePosition);
-        console.log(newMousePosition);
         if (mousePosition && newMousePosition) {
-            console.log(mousePosition);
-            console.log(newMousePosition);
-            draw(mousePosition, newMousePosition);
+            if(tool !== TOOL_LINE && tool !== TOOL_ERASER) {
+                draw(mousePosition, newMousePosition);
+            }
         }
-        // setIsPainting(false);
-        // setMousePosition(undefined);
-    }, []);
+        setIsPainting(false);
+        setMousePosition(undefined);
+    }, [mousePosition, newMousePosition]);
 
     useEffect(() => {
         if (!canvasRef.current) {
@@ -128,8 +133,15 @@ const Canvas = ({ width, height, canvasRef, tool, color, size }: CanvasProps) =>
         const canvas: HTMLCanvasElement = canvasRef.current;
         const context = canvas.getContext('2d');
         if (context) {
-            if(tool === TOOL_LINE) {
-                context.strokeStyle = color;
+            context.globalCompositeOperation = "source-over"
+            if(tool === TOOL_LINE || tool === TOOL_ERASER) {
+
+                if(tool === TOOL_LINE) {
+                    context.strokeStyle = color;
+                } else {
+                    context.globalCompositeOperation = "destination-out";
+                    context.strokeStyle = "rgba(0,0,0,1)";
+                }
                 context.lineJoin = 'round';
                 context.lineWidth = size;
 
@@ -154,8 +166,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size }: CanvasProps) =>
                 context.lineWidth = size;
                 context.strokeStyle = color;
                 // context.fillStyle = item.fill;
-
-                    drawEllipsePolifyll(centerX, centerY, radiusX, radiusY);
+                drawEllipsePolifyll(centerX, centerY, radiusX, radiusY);
                 context.stroke();
                 // if (item.fill) context.fill();
                 context.closePath();

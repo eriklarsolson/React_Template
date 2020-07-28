@@ -3,8 +3,12 @@ import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
-import {SketchPad, TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE} from "./Sketchpad";
 import Canvas from "./Canvas";
+
+export const TOOL_LINE = 'line';
+export const TOOL_RECTANGLE = 'rectangle';
+export const TOOL_ELLIPSE = 'ellipse';
+export const TOOL_ERASER = 'eraser';
 
 class MetalEngraving extends React.Component<any, any> {
     constructor(props: any) {
@@ -12,7 +16,7 @@ class MetalEngraving extends React.Component<any, any> {
         this.state = {
             popupOpened: true,
             tool:TOOL_LINE,
-            size: 10,
+            size: 15,
             color: '#000000',
             fill: false,
             fillColor: '#444444',
@@ -128,10 +132,11 @@ class MetalEngraving extends React.Component<any, any> {
                                                   <input type="color" value={this.state.fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />
                                                 </span> : ''}
                                             </div> : ''}
-                                        <div className="options" style={{marginBottom:20}}>
-                                            <label htmlFor="">Color: </label>
-                                            <input type="color" value={this.props.color} onChange={(e) => this.setState({color: e.target.value})} />
-                                        </div>
+                                        {(this.state.tool !== TOOL_ERASER) ?
+                                            <div className="options" style={{marginBottom:20}}>
+                                                <label htmlFor="">Color: </label>
+                                                <input type="color" value={this.props.color} onChange={(e) => this.setState({color: e.target.value})} />
+                                            </div> : ''}
                                     </Col>
 
                                     <Col>
@@ -139,7 +144,7 @@ class MetalEngraving extends React.Component<any, any> {
 
                                         <div className="options" style={{marginBottom:20}}>
                                             <label htmlFor="">Size: </label>
-                                            <input min="1" max="20" type="range" value={this.props.size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />
+                                            <input min="1" max="40" type="range" value={this.props.size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />
                                         </div>
                                     </Col>
 

@@ -1,6 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import {TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE} from "./Sketchpad/tools";
+
+export const TOOL_LINE = 'line';
+export const TOOL_RECTANGLE = 'rectangle';
+export const TOOL_ELLIPSE = 'ellipse';
+export const TOOL_ERASER = 'eraser';
 
 class Sidebar extends React.Component<any, any> {
     render() {
@@ -36,6 +40,16 @@ class Sidebar extends React.Component<any, any> {
                                className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
                                onClick={() => this.props.setTool(TOOL_RECTANGLE)}
                            >Rectangle</button>
+                       </Col>
+                   </Row>
+
+                   <Row style={{margin: "5px"}}>
+                       <Col>
+                           <button
+                               style={{width: "100px", height: "100px"}}
+                               className={this.props.tool === TOOL_ERASER  ? 'item-active' : 'item'}
+                               onClick={() => this.props.setTool(TOOL_ERASER)}
+                           >Eraser</button>
                        </Col>
                    </Row>
                </Container>

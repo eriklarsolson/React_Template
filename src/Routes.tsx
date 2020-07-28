@@ -19,7 +19,7 @@ class Routes extends Component {
                     <Route path="/metal-engraving" component={MetalEngraving} />
                     <Route path="/telescope-activity" component={TelescopeActivity} />
                     <Route path="/stellar-cycle" component={StellarCycle} />
-                    <Route path="/object-page/:title" component={ObjectPage} />
+                    <Route path="/object-page" component={ObjectPage} />
                     <Route path="/about" component={AboutUs} />
                     <Route path="/resources" component={Resources} />
                     <Route path="/" component={Home} />

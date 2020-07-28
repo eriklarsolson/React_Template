@@ -20,7 +20,10 @@ class StellarCycle extends React.Component<any, any> {
         }
 
         const goToObjectPage = (title: string) => {
-            this.props.history.push('/object-page/' + title)
+            this.props.history.push({
+                pathname: '/object-page',
+                state: { title: title }
+            })
         }
 
         return (
