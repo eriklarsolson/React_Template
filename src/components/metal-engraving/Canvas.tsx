@@ -103,10 +103,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size }: CanvasProps) =>
         const canvas: HTMLCanvasElement = canvasRef.current;
         const rect = canvas.getBoundingClientRect()
 
-        const scaleX = canvas.width / rect.width
-        const scaleY = canvas.height / rect.height;
-
-        return { x: (event.pageX - rect.left) * scaleX , y: (event.pageY  - rect.top) * scaleY};
+        return { x: (event.x - rect.left) , y: (event.y  - rect.top)};
     };
 
     const drawEllipsePolifyll = (centerX: number, centerY: number, radiusX: number, radiusY: number) => {

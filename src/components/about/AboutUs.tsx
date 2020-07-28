@@ -2,7 +2,7 @@ import React from 'react';
 import banner from "./aboutusbanner.png";
 import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
-import RatePopup from "../shared/modals/RatePopup";
+import RatePopup from "../shared/modals/Rate/RatePopup";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 

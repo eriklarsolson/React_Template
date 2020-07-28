@@ -41,7 +41,7 @@ class Sidebar extends React.Component<any, any> {
         return (
             <>
                <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
-                   <h3 style={{paddingTop: "15px"}}>Attributes</h3>
+                   <h3 style={{paddingTop: "15px", paddingBottom: "30px"}}>Attributes</h3>
 
                    <Row style={{margin: "5px"}}>
                        <Col>
@@ -70,7 +70,9 @@ class Sidebar extends React.Component<any, any> {
                        </Col>
                    </Row>
 
-                   <h3 style={{paddingTop: "15px"}}>Description</h3>
+                   <hr style={{backgroundColor: "white", height: "4px", margin: "30px 10px 30px 10px", borderRadius: "30px"}}/>
+
+                   <h3>Description</h3>
                    <Row style={{margin: "5px"}}>
                        <Col>
                            <p>{this.props.description}</p>

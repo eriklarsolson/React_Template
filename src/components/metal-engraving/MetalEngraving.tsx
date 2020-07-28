@@ -4,7 +4,8 @@ import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import Canvas from "./Canvas";
-
+import EngravingPopup from "../shared/modals/Engraving/EngravingPopup";
+import snowman from "../shared/modals/Engraving/snowman.png";
 export const TOOL_LINE = 'line';
 export const TOOL_RECTANGLE = 'rectangle';
 export const TOOL_ELLIPSE = 'ellipse';
@@ -15,6 +16,7 @@ class MetalEngraving extends React.Component<any, any> {
         super(props);
         this.state = {
             popupOpened: true,
+            engravingPopupOpened: false,
             tool:TOOL_LINE,
             size: 15,
             color: '#000000',
@@ -35,6 +37,14 @@ class MetalEngraving extends React.Component<any, any> {
             this.setState({popupOpened: false})
         }
 
+        const openEngravingPopup = () => {
+            this.setState({engravingPopupOpened: true})
+        }
+
+        const closeEngravingPopup = () => {
+            this.setState({engravingPopupOpened: false})
+        }
+
         const setTool = (tool: string) => {
             this.setState({tool: tool})
         }
@@ -43,6 +53,17 @@ class MetalEngraving extends React.Component<any, any> {
             const canvas: HTMLCanvasElement = this.state.canvasRef.current;
             const context = canvas.getContext('2d');
             context?.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        const addStencil = (object: any) => {
+            this.setState({engravingPopupOpened: false})
+            const canvas: HTMLCanvasElement = this.state.canvasRef.current;
+            const context = canvas.getContext('2d');
+
+            const image = new Image();
+            image.src = object
+
+            context?.drawImage(image, 210, 150, 400, 400);
         }
 
         return (
@@ -55,6 +76,9 @@ class MetalEngraving extends React.Component<any, any> {
                           "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
                           "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
                        closePopup={closePopup} />
+
+               <EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}
+                               addStencil={addStencil} />
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
@@ -80,7 +104,7 @@ class MetalEngraving extends React.Component<any, any> {
                                                 <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
                                                     borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Question</Button>
                                                 <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Stencil</Button>
+                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openEngravingPopup}>Stencil</Button>
                                             </Col>
                                             <Col className={"col-3"}>
                                                 <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
@@ -96,19 +120,6 @@ class MetalEngraving extends React.Component<any, any> {
                                     <Col className={"justify-content-center align-content-center"} >
 
                                         <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool} color={this.state.color} size={this.state.size} />
-
-                                        {/*</div>*/}
-                                        {/*<SketchPad*/}
-                                        {/*    setTool={setTool}*/}
-                                        {/*    width={500}*/}
-                                        {/*    height={500}*/}
-                                        {/*    animate={true}*/}
-                                        {/*    size={this.state.size}*/}
-                                        {/*    color={this.state.color}*/}
-                                        {/*    fillColor={this.state.fill ? this.state.fillColor : ''}*/}
-                                        {/*    items={this.state.items}*/}
-                                        {/*    tool={this.state.tool}*/}
-                                        {/*/>*/}
                                     </Col>
                                 </Row>
 

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
+import satellite from './satellite.png'
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
@@ -41,9 +42,15 @@ class TelescopeActivity extends React.Component<any, any> {
 
                                 <Row>
                                     <Col className={"justify-content-center align-content-center"}>
-                                        <div style={{width: "800px", height: "400px", backgroundColor: "grey", margin: "auto"}}>
+                                        <div style={{width: "1000px", height: "400px", backgroundImage:`url(${satellite})`, margin: "auto"}}>
 
                                         </div>
+                                    </Col>
+                                </Row>
+
+                                <Row style={{margin: "20px"}}>
+                                    <Col className={"justify-content-center align-content-center"}>
+                                       Focus Bar
                                     </Col>
                                 </Row>
 

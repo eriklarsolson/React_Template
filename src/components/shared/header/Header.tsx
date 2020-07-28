@@ -5,6 +5,16 @@ import './Header.scss';
 
 const Header = (props: {location: any }) => {
     const { location } = props;
+
+    //TODO - Display what page you are on as a title next to the logo
+    const getPageTitle = () => {
+        if(location.pathname.startsWith('/home') || location.pathname === '/') {
+            return "Home"
+        } else {
+            return ""
+        }
+    }
+
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu">
