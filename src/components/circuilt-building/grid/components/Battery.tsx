@@ -10,11 +10,14 @@ const style: React.CSSProperties = {
 }
 
 export const Battery: React.FC = () => {
+
+
     const [{ isDragging }, drag] = useDrag({
         item: { type: ComponentTypes.BATTERY },
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
         }),
+
     })
 
     return (

@@ -30,5 +30,5 @@ export function canMoveComponent(toX: number, toY: number): boolean {
 
 export function moveComponent(toX: number, toY: number): void {
     componentPosition = [toX, toY]
-    emitChange()
+    emitChange() //todo focus on this emit change
 }

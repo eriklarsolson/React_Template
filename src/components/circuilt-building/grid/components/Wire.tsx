@@ -3,6 +3,8 @@ import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
 // import { knightImage } from './knightImage'
 
+export const COMP_WIRE = 'wire';
+
 const style: React.CSSProperties = {
     fontSize: 16,
     fontWeight: 'bold',

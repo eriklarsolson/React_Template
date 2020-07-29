@@ -5,7 +5,9 @@ import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import Canvas from "./Canvas";
 import EngravingPopup from "../shared/modals/Engraving/EngravingPopup";
-import snowman from "../shared/modals/Engraving/snowman.png";
+import banner from '../home/banner.png';
+
+export const TOOL_LASER = 'laser';
 export const TOOL_LINE = 'line';
 export const TOOL_RECTANGLE = 'rectangle';
 export const TOOL_ELLIPSE = 'ellipse';
@@ -17,16 +19,15 @@ class MetalEngraving extends React.Component<any, any> {
         this.state = {
             popupOpened: true,
             engravingPopupOpened: false,
-            tool:TOOL_LINE,
+            tool:TOOL_LASER,
             size: 15,
             color: '#000000',
             fill: false,
             fillColor: '#444444',
             items: [],
-            canvasRef: React.createRef()
+            canvasRef: React.createRef(),
         };
     }
-
 
     render() {
         const openPopup = () => {
@@ -68,6 +69,8 @@ class MetalEngraving extends React.Component<any, any> {
 
         return (
             <>
+
+
                 <Popup title={"02 Laser and Lenses Objective"}
                        open={this.state.popupOpened}
                        description={"Using lasers, prisms, and lenses, create an " +
@@ -117,8 +120,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 </Row>
 
                                 <Row>
-                                    <Col className={"justify-content-center align-content-center"} >
-
+                                    <Col className={"justify-content-center align-content-center"} style={{cursor: `url(${banner})` }}>
                                         <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool} color={this.state.color} size={this.state.size} />
                                     </Col>
                                 </Row>

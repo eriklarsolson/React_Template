@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 
+export const TOOL_LASER = 'laser';
 export const TOOL_LINE = 'line';
 export const TOOL_RECTANGLE = 'rectangle';
 export const TOOL_ELLIPSE = 'ellipse';
@@ -12,6 +13,16 @@ class Sidebar extends React.Component<any, any> {
             <>
                <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
                    <h3 style={{paddingTop: "15px"}}>Components</h3>
+
+                   <Row style={{margin: "5px"}}>
+                       <Col>
+                           <button
+                               style={{width: "100px", height: "100px"}}
+                               className={this.props.tool === TOOL_LASER  ? 'item-active' : 'item'}
+                               onClick={() => this.props.setTool(TOOL_LASER)}
+                           >Laser</button>
+                       </Col>
+                   </Row>
 
                    <Row style={{margin: "5px"}}>
                        <Col>

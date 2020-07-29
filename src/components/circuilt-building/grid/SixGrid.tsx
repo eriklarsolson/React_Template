@@ -9,6 +9,7 @@ import {Capacitor} from "./components/Capacitor";
 
 export interface GridProps {
     components: any,
+    selectedComponent: number
 }
 
 /** Styling properties applied to the board element */
@@ -25,7 +26,7 @@ const squareStyle: React.CSSProperties = { width: '16.65%', height: '16.65%' }
  * The chessboard component
  * @param props The react props
  */
-export const SixGrid: React.FC<GridProps> = ({components}) => {
+export const SixGrid: React.FC<GridProps> = ({components, selectedComponent}) => {
     function renderSquare(i: number) {
         const x = i % 6
         const y = Math.floor(i / 6)

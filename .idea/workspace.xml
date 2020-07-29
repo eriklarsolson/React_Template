@@ -10,34 +10,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Styling fixes on various pages and beginning to build out object page for stellar cycle">
-      <change afterPath="$PROJECT_DIR$/.idea/statistic.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Engraving/EngravingPopup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Engraving/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Engraving/planet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Engraving/plant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Engraving/snowman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/telescope-activity/satellite.png" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="The changes keep coming and they don't stop coming">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGrid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/SketchPad.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Ellipse.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Line.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/Rectangle.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sketchpad/tools/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/Rate.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/RatePopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/RatePopup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/bored.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/bored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/happy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/happy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/neutral.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/neutral.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/sad.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/sad.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/smart.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/smart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +88,7 @@
       <workItem from="1595420568531" duration="14828000" />
       <workItem from="1595854996445" duration="22779000" />
       <workItem from="1595939836241" duration="14863000" />
-      <workItem from="1595965407276" duration="1077000" />
+      <workItem from="1595965407276" duration="7897000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -127,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595959457670</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="The changes keep coming and they don't stop coming">
+      <created>1595972041705</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595972041705</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +140,8 @@
     <MESSAGE value="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)" />
     <MESSAGE value="adding functionality to sketchpad and building out metal engraving page" />
     <MESSAGE value="Styling fixes on various pages and beginning to build out object page for stellar cycle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styling fixes on various pages and beginning to build out object page for stellar cycle" />
+    <MESSAGE value="The changes keep coming and they don't stop coming" />
+    <option name="LAST_COMMIT_MESSAGE" value="The changes keep coming and they don't stop coming" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -164,6 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595948458899" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1595972265667">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595972265667" />
     <state x="629" y="298" key="EditFileWatcherDialog" timestamp="1594947783720">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -192,19 +188,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1595959460211">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1595972055636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595959460211" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595972055636" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595958216715" />
-    <state x="338" y="244" width="585" height="624" key="find.popup" timestamp="1595964496469">
+    <state x="823" y="173" width="585" height="624" key="find.popup" timestamp="1595988841474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
-    <state x="338" y="244" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595964496469" />
+    <state x="823" y="173" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595988841474" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -218,9 +214,9 @@
     </state>
     <state x="482" y="223" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1595717092125" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595962107866" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595944363990">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595989413121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595944363990" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595989413121" />
   </component>
 </project>

@@ -1,12 +1,8 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {moveComponent, observe} from './Functionality'
 import {SixGrid} from "./SixGrid";
-import update from "immutability-helper";
-import {ComponentTypes} from "../grid2/ComponentTypes";
-import {useDrop} from "react-dnd";
-import {DragItem} from "../../shared/models/DragItem";
-import {snapToGrid as doSnapToGrid} from "../grid2/Functionality";
 import {Container, Row, Col} from "react-bootstrap";
+import update from 'immutability-helper'
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -20,28 +16,16 @@ interface BoxMap {
 export interface GridContainerProps {
     grid: string;
     objectiveImage: any;
+    components: any;
+    selectedComponent: number;
+    addNewComponent: any;
+    updateComponents: any;
 }
 
-export const SixGridContainer: React.FC<GridContainerProps> = ({grid, objectiveImage}) => {
-    const [boxes, setBoxes] = useState<BoxMap>({
-        a: { x: 20, y: 80, type: 'battery' },
-        b: { x: 180, y: 20, type: 'Drag me too' },
-    })
+export const SixGridContainer: React.FC<GridContainerProps> = ({grid, objectiveImage, components,
+                                                                   selectedComponent, addNewComponent,
+                                                                   updateComponents}) => {
 
-    const moveBox = useCallback(
-        (id: string, x: number, y: number) => {
-            setBoxes(
-                update(boxes, {
-                    [id]: {
-                        $merge: { x, y },
-                    },
-                }),
-            )
-        },
-        [boxes],
-    )
-
-    useEffect(() => observe((boxMap: [number, number]) => moveBox("a", boxMap[0], boxMap[1])))
     return (
         <>
             <Container fluid>
@@ -49,7 +33,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({grid, objectiveI
                     <Col className={"col-4"} style={{padding: "0", margin: "0"}}>
                         <div className={"d-flex justify-content-center align-content-center"}>
                             <div style={containerStyle}>
-                                <SixGrid components={boxes}  />
+                                <SixGrid components={components} selectedComponent={selectedComponent}  />
                             </div>
                         </div>
                     </Col>

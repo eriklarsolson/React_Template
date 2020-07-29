@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import {HTML5Backend} from "react-dnd-html5-backend";
@@ -10,6 +10,13 @@ import objective1wire from './objective1wire.png'
 import objective2wire from './objective2wire.png'
 import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
+import {ComponentTypes} from "../shared/models/ComponentTypes";
+import update from "immutability-helper";
+import {observe} from "./grid/Functionality";
+
+interface BoxMap {
+    [key: string]: { x: number; y: number; type: string }
+}
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -33,23 +40,31 @@ class CircuitBuilding extends React.Component<any, any> {
             "needed. If you need to make changes to parts of your circuit, click the component you would like to remove " +
             "and then press the TRASH icon."],
             currentLevel: 1,
-            levels: [
+            components: [
                 {
-                    components: [
-                        {
-                            x: 0,
-                            y: 3,
-                            type: "battery"
-                        }
-                    ]
+                    x: 0,
+                    y: 0,
+                    type: ComponentTypes.BATTERY
                 }
             ],
+            selectedComponent: 0,
             gridImages: [objective1wire, objective2wire, objective3wire]
         };
     }
 
-
     render() {
+
+        const moveBox =
+            (id: number, x: number, y: number) => {
+                updateComponents(
+                    update(this.state.components, {
+                        [id]: {
+                            $merge: { x, y },
+                        },
+                    }),
+                )
+            }
+
         const goToNextLevel = () => {
             const nextLevel = this.state.currentLevel + 1;
 
@@ -95,6 +110,26 @@ class CircuitBuilding extends React.Component<any, any> {
             this.setState({circuitPopupOpened: true})
         }
 
+        const setSelectedComponent = (index: number) => {
+            this.setState({selectedComponent: index})
+        }
+
+        const updateComponents = (components: any) => {
+            this.setState({components: components})
+        }
+
+        const addNewComponent = (x: number, y: number, type: number) => {
+            const component = {
+              x: x,
+              y: y,
+              type: type
+            }
+
+            let components = this.state.components
+            components.push(component)
+            this.setState((state: any) => ({ ...state, components: components}))
+        }
+
         return (
             <>
                 <CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={closeCircuitPopup} />
@@ -138,8 +173,11 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                     <Row style={{margin: "0"}}>
                                         <Col>
-                                            <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]} grid={"1px solid gray"} />
-                                            {/*<CustomDragLayer />*/}
+                                            <SixGridContainer components={this.state.components}
+                                                              selectedComponent={this.state.components}
+                                                              objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
+                                                              grid={"1px solid gray"} addNewComponent={addNewComponent}
+                                                              updateComponents={updateComponents} />
                                         </Col>
                                     </Row>
 
@@ -167,4 +205,5 @@ class CircuitBuilding extends React.Component<any, any> {
         )
     }
 }
+
 export default CircuitBuilding;
