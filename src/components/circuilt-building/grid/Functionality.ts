@@ -1,9 +1,27 @@
+import {ComponentTypes} from "../../shared/models/ComponentTypes";
+
 let observers: PositionObserver[] = []
-export type PositionObserver = ((boxMap: [number, number]) => void) | null
-let componentPosition: [number, number] = [0, 0]
+export type PositionObserver = ((component: {x: number, y: number, type: string}) => void) | null
+// let componentPosition: [number, number] = [0, 0]
+let components =  [
+    {
+        x: 0,
+        y: 0,
+        type: ComponentTypes.BATTERY
+    },
+    {
+        x: 1,
+        y: 2,
+        type: ComponentTypes.BATTERY
+    }
+]
+
+export function getComponents(): any {
+    return components;
+}
 
 function emitChange() {
-    observers.forEach((o) => o && o(componentPosition))
+    observers.forEach((o) => o && o(components[0]))
 }
 
 export function observe(o: PositionObserver): () => void {
@@ -16,7 +34,8 @@ export function observe(o: PositionObserver): () => void {
 }
 
 export function canMoveComponent(toX: number, toY: number): boolean {
-    const [x, y] = componentPosition
+    const x = components[0].x
+    const y = components[0].y
     const dx = toX - x
     const dy = toY - y
 
@@ -29,6 +48,8 @@ export function canMoveComponent(toX: number, toY: number): boolean {
 }
 
 export function moveComponent(toX: number, toY: number): void {
-    componentPosition = [toX, toY]
+    console.log(components)
+    components.push({x: toX, y: toY, type: ComponentTypes.BATTERY})
+    console.log(components)
     emitChange() //todo focus on this emit change
 }

@@ -4,6 +4,7 @@ import { Square } from './Square'
 import { canMoveComponent, moveComponent } from './Functionality'
 import { ComponentTypes } from '../../shared/models/ComponentTypes'
 import { ColorOverlay } from './ColorOverlay'
+import {DragItem} from "../../shared/models/DragItem";
 
 export interface GridSquareProps {
     x: number
@@ -22,7 +23,7 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, components, childre
         accept: [ComponentTypes.WIRE, ComponentTypes.BATTERY, ComponentTypes.RESISTOR
             ,ComponentTypes.SWITCH , ComponentTypes.INDUCTOR , ComponentTypes.CAPACITOR],
         canDrop: () => canMoveComponent(x, y),
-        drop: () => moveComponent(x, y),
+        drop: (item: DragItem) => moveComponent(x, y),
         collect: (monitor) => ({
             isOver: monitor.isOver(),
             canDrop: monitor.canDrop(),

@@ -5,7 +5,8 @@ import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import Canvas from "./Canvas";
 import EngravingPopup from "../shared/modals/Engraving/EngravingPopup";
-import banner from '../home/banner.png';
+import lasericon from "./lasericon.png";
+import lasericonon from "./lasericonon.png";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_LINE = 'line';
@@ -19,13 +20,15 @@ class MetalEngraving extends React.Component<any, any> {
         this.state = {
             popupOpened: true,
             engravingPopupOpened: false,
-            tool:TOOL_LASER,
+            tool: TOOL_LINE,
             size: 15,
             color: '#000000',
             fill: false,
             fillColor: '#444444',
             items: [],
             canvasRef: React.createRef(),
+            cursor: null,
+            toolActive: true,
         };
     }
 
@@ -48,6 +51,12 @@ class MetalEngraving extends React.Component<any, any> {
 
         const setTool = (tool: string) => {
             this.setState({tool: tool})
+
+            if(tool === TOOL_LASER) {
+                this.setState({cursor: lasericonon})
+            } else {
+                this.setState({cursor: null})
+            }
         }
 
         const clearCanvas = () => {
@@ -65,6 +74,21 @@ class MetalEngraving extends React.Component<any, any> {
             image.src = object
 
             context?.drawImage(image, 210, 150, 400, 400);
+        }
+
+        const rightClick = (event: { preventDefault: () => void; }) => {
+            if(this.state.tool === TOOL_LASER) {
+                event.preventDefault()
+
+                if(this.state.toolActive) {
+                    this.setState({cursor: lasericon })
+                    this.setState({toolActive: false})
+                } else {
+                    this.setState({cursor: lasericonon})
+                    this.setState({toolActive: true})
+
+                }
+            }
         }
 
         return (
@@ -90,7 +114,7 @@ class MetalEngraving extends React.Component<any, any> {
                         </Col>
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
-                            <Container fluid style={{margin: "0", padding: "0"}}>
+                            <Container fluid style={{margin: "0", padding: "0", cursor: `url(${this.state.cursor}), auto`}}>
                                 <Row style={{margin: "3%"}}>
                                     <Col>
                                         <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
@@ -120,8 +144,9 @@ class MetalEngraving extends React.Component<any, any> {
                                 </Row>
 
                                 <Row>
-                                    <Col className={"justify-content-center align-content-center"} style={{cursor: `url(${banner})` }}>
-                                        <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool} color={this.state.color} size={this.state.size} />
+                                    <Col className={"justify-content-center align-content-center"} onContextMenu={rightClick}>
+                                        <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool}
+                                                color={this.state.color} size={this.state.size} toolActive={this.state.toolActive} />
                                     </Col>
                                 </Row>
 
