@@ -7,12 +7,8 @@ import {Switch} from "./components/Switch";
 import {Inductor} from "./components/Inductor";
 import {Capacitor} from "./components/Capacitor";
 
-interface BoxMap {
-    [key: string]: { x: number; y: number; type: string }
-}
-
 export interface GridProps {
-    components: BoxMap
+    components: [{x: number, y: number, type: string}]
 }
 
 /** Styling properties applied to the board element */
@@ -55,7 +51,7 @@ export class OneGrid extends React.Component<GridProps> {
             return (
                 <div key={i} style={squareStyle}>
                     <GridSquare x={0} y={0} components={components}>
-                        {renderSwitch(components["a"].type)}
+                        {renderSwitch(components[0].type)}
                     </GridSquare>
                 </div>
             )

@@ -9,11 +9,12 @@ import {DragItem} from "../../shared/models/DragItem";
 export interface GridSquareProps {
     x: number
     y: number
+    type: string
     components: any
     children: any
 }
 
-export const GridSquare: React.FC<GridSquareProps> = ({x, y, components, children}: GridSquareProps) => {
+export const GridSquare: React.FC<GridSquareProps> = ({x, y, type, children}: GridSquareProps) => {
     // const getCorrectComponentKey = () => {
     //     let filteredComp = components.filter((comp: { x: number; y: number }) => comp.x === x && comp.y === y)
     //     return filteredComp[0].key
@@ -23,7 +24,7 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, components, childre
         accept: [ComponentTypes.WIRE, ComponentTypes.BATTERY, ComponentTypes.RESISTOR
             ,ComponentTypes.SWITCH , ComponentTypes.INDUCTOR , ComponentTypes.CAPACITOR],
         canDrop: () => canMoveComponent(x, y),
-        drop: (item: DragItem) => moveComponent(x, y),
+        drop: (item: DragItem) => moveComponent(x, y, type, 0),
         collect: (monitor) => ({
             isOver: monitor.isOver(),
             canDrop: monitor.canDrop(),

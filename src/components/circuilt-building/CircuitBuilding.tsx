@@ -12,6 +12,7 @@ import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
 import {ComponentTypes} from "../shared/models/ComponentTypes";
 import update from "immutability-helper";
+import {observe} from "./grid/Functionality";
 
 interface BoxMap {
     [key: string]: { x: number; y: number; type: string }

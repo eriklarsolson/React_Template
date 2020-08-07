@@ -47,9 +47,12 @@ export function canMoveComponent(toX: number, toY: number): boolean {
     // return !componentAtLocation
 }
 
-export function moveComponent(toX: number, toY: number): void {
-    console.log(components)
-    components.push({x: toX, y: toY, type: ComponentTypes.BATTERY})
-    console.log(components)
+export function moveComponent(toX: number, toY: number, type: string, id: number): void {
+    components.push({x: toX, y: toY, type: type})
     emitChange() //todo focus on this emit change
+}
+
+export function setComponentsList(newComponents: any): void {
+    components = newComponents
+    emitChange()
 }

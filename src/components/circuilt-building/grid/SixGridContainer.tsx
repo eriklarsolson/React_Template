@@ -10,10 +10,6 @@ const containerStyle: React.CSSProperties = {
     height: 500,
 }
 
-interface BoxMap {
-    [key: string]: { x: number; y: number; type: string }
-}
-
 export interface GridContainerProps {
     grid: string;
     objectiveImage: any;
