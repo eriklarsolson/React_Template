@@ -1,14 +1,14 @@
 import React from 'react'
-import {GridSquare} from "./GridSquare";
 import {Battery} from "./components/Battery";
 import {Resistor} from "./components/Resistor";
 import {Wire} from "./components/Wire";
 import {Switch} from "./components/Switch";
 import {Inductor} from "./components/Inductor";
 import {Capacitor} from "./components/Capacitor";
+import {resetPositions} from "./Functionality";
 
 export interface GridProps {
-    components: [{x: number, y: number, type: string}]
+    components: [{x: number, y: number, type: string}];
 }
 
 /** Styling properties applied to the board element */
@@ -16,6 +16,7 @@ const boardStyle: React.CSSProperties = {
     width: '100%',
     height: '100%',
     display: 'flex',
+    backgroundColor: 'white'
 }
 /** Styling properties applied to each square element */
 const squareStyle: React.CSSProperties = { width: '100%', height: '100%' }
@@ -31,28 +32,26 @@ export class OneGrid extends React.Component<GridProps> {
         function renderSwitch(type: string) {
             switch (type) {
                 case 'wire':
-                    return <Wire/>;
+                    return <Wire oneGridStyling={true} />;
                 case 'battery':
-                    return <Battery/>;
+                    return <Battery oneGridStyling={true} />;
                 case 'resistor':
-                    return <Resistor/>;
+                    return <Resistor oneGridStyling={true} />;
                 case 'switch':
-                    return <Switch/>;
+                    return <Switch oneGridStyling={true} />;
                 case 'inductor':
-                    return <Inductor/>;
+                    return <Inductor oneGridStyling={true} />;
                 case 'capacitor':
-                    return <Capacitor/>;
+                    return <Capacitor oneGridStyling={true} />;
                 default:
-                    return <Battery/>;
+                    return <Battery oneGridStyling={true} />;
             }
         }
 
         function renderSquare(i: number) {
             return (
-                <div key={i} style={squareStyle}>
-                    <GridSquare x={0} y={0} components={components}>
-                        {renderSwitch(components[0].type)}
-                    </GridSquare>
+                <div key={i} style={squareStyle} onMouseDown={() => resetPositions()}>
+                    {renderSwitch(components[0].type)}
                 </div>
             )
         }

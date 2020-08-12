@@ -9,7 +9,7 @@ export interface GridContainerProps {
 }
 
 const containerStyle: React.CSSProperties = {
-    width: 100,
+    width: 150,
     height: 100,
     border: '1px solid gray',
 }

@@ -12,7 +12,7 @@ import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
 import {ComponentTypes} from "../shared/models/ComponentTypes";
 import update from "immutability-helper";
-import {observe} from "./grid/Functionality";
+import {observe, setComponentsList} from "./grid/Functionality";
 
 interface BoxMap {
     [key: string]: { x: number; y: number; type: string }
@@ -40,31 +40,12 @@ class CircuitBuilding extends React.Component<any, any> {
             "needed. If you need to make changes to parts of your circuit, click the component you would like to remove " +
             "and then press the TRASH icon."],
             currentLevel: 1,
-            components: [
-                {
-                    x: 0,
-                    y: 0,
-                    type: ComponentTypes.BATTERY
-                }
-            ],
-            selectedComponent: 0,
+            gridShowing: true,
             gridImages: [objective1wire, objective2wire, objective3wire]
         };
     }
 
     render() {
-
-        const moveBox =
-            (id: number, x: number, y: number) => {
-                updateComponents(
-                    update(this.state.components, {
-                        [id]: {
-                            $merge: { x, y },
-                        },
-                    }),
-                )
-            }
-
         const goToNextLevel = () => {
             const nextLevel = this.state.currentLevel + 1;
 
@@ -76,6 +57,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
             const titleString = "Level " + nextLevel + " Objective"
             this.setState({popupTitle: titleString})
+            setComponentsList([])
             openPopup()
         }
 
@@ -90,6 +72,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
             const titleString = "Level " + pastLevel + " Objective"
             this.setState({popupTitle: titleString})
+            setComponentsList([])
             openPopup()
         }
 
@@ -108,26 +91,6 @@ class CircuitBuilding extends React.Component<any, any> {
 
         const openCircuitPopup = () => {
             this.setState({circuitPopupOpened: true})
-        }
-
-        const setSelectedComponent = (index: number) => {
-            this.setState({selectedComponent: index})
-        }
-
-        const updateComponents = (components: any) => {
-            // this.setState({components: components})
-        }
-
-        const addNewComponent = (x: number, y: number, type: number) => {
-            const component = {
-              x: x,
-              y: y,
-              type: type
-            }
-
-            let components = this.state.components
-            components.push(component)
-            this.setState((state: any) => ({ ...state, components: components}))
         }
 
         return (
@@ -173,11 +136,8 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                     <Row style={{margin: "0"}}>
                                         <Col>
-                                            <SixGridContainer components={this.state.components}
-                                                              selectedComponent={this.state.components}
-                                                              objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
-                                                              grid={"1px solid gray"} addNewComponent={addNewComponent}
-                                                              updateComponents={updateComponents} />
+                                            <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
+                                                              grid={this.state.gridShowing}  />
                                         </Col>
                                     </Row>
 

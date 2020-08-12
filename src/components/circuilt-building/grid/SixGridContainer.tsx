@@ -13,18 +13,14 @@ const containerStyle: React.CSSProperties = {
 export interface GridContainerProps {
     grid: string;
     objectiveImage: any;
-    components: any;
-    selectedComponent: number;
-    addNewComponent: any;
-    updateComponents: any;
 }
 
-export const SixGridContainer: React.FC<GridContainerProps> = ({grid, objectiveImage,
-                                                                   selectedComponent, addNewComponent,
-                                                                   updateComponents}) => {
+export const SixGridContainer: React.FC<GridContainerProps> = ({grid, objectiveImage}) => {
 
+    //I don't actually use this currentComp variable, but I need the useEffect on observe below and it's working right now
+    //and I don't want to change it
     const [currentComp, setCurrentComp] = useState<{x: number, y: number, type: string}>({x: 0, y: 0, type: ComponentTypes.BATTERY})
-    useEffect(() => observe((components: any) => setCurrentComp(components)))
+    useEffect(() => observe((component: any) => setCurrentComp(component)))
 
     return (
         <>
@@ -33,7 +29,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({grid, objectiveI
                     <Col className={"col-4"} style={{padding: "0", margin: "0"}}>
                         <div className={"d-flex justify-content-center align-content-center"}>
                             <div style={containerStyle}>
-                                <SixGrid components={getComponents()} selectedComponent={selectedComponent}  />
+                                <SixGrid components={getComponents()} />
                             </div>
                         </div>
                     </Col>

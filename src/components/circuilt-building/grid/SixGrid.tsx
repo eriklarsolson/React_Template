@@ -6,10 +6,10 @@ import {Wire} from "./components/Wire";
 import {Switch} from "./components/Switch";
 import {Inductor} from "./components/Inductor";
 import {Capacitor} from "./components/Capacitor";
+import {setCurrentComponent} from "./Functionality";
 
 export interface GridProps {
     components: any,
-    selectedComponent: number
 }
 
 /** Styling properties applied to the board element */
@@ -26,7 +26,8 @@ const squareStyle: React.CSSProperties = { width: '16.65%', height: '16.65%' }
  * The chessboard component
  * @param props The react props
  */
-export const SixGrid: React.FC<GridProps> = ({components, selectedComponent}) => {
+export const SixGrid: React.FC<GridProps> = ({components}) => {
+
     function renderSquare(i: number) {
         const x = i % 6
         const y = Math.floor(i / 6)
@@ -34,7 +35,7 @@ export const SixGrid: React.FC<GridProps> = ({components, selectedComponent}) =>
         return (
             <div key={i} style={squareStyle}>
                 <GridSquare x={x} y={y} components={components}>
-                    {Object.keys(components).map((key) =>
+                    {Object.keys(components).map((key, index) =>
                         renderPiece(x, y, components[key].x, components[key].y, components[key].type,))}
                 </GridSquare>
             </div>
@@ -47,19 +48,19 @@ export const SixGrid: React.FC<GridProps> = ({components, selectedComponent}) =>
 
         switch (type) {
             case "wire":
-                return isCompHere ? <Wire/> : null
+                return isCompHere ? <Wire oneGridStyling={false} /> : null
             case "battery":
-                return isCompHere ? <Battery/> : null
+                return isCompHere ? <Battery oneGridStyling={false} /> : null
             case "resistor":
-                return isCompHere ? <Resistor/> : null
+                return isCompHere ? <Resistor oneGridStyling={false} /> : null
             case "capacitor":
-                return isCompHere ? <Capacitor/> : null
+                return isCompHere ? <Capacitor oneGridStyling={false} /> : null
             case "switch":
-                return isCompHere ? <Switch/> : null
+                return isCompHere ? <Switch oneGridStyling={false} /> : null
             case "inductor":
-                return isCompHere ? <Inductor/> : null
+                return isCompHere ? <Inductor oneGridStyling={false} /> : null
             default:
-                return isCompHere ? <Wire/> : null
+                return isCompHere ? <Wire oneGridStyling={false} /> : null
         }
     }
 
