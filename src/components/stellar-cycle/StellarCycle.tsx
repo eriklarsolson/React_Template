@@ -130,7 +130,10 @@ class StellarCycle extends React.Component<any, any> {
                         <Col>
                             <Button style={{color: "black", width: "15%", backgroundColor: "#3BD186",
                                 float: "left", borderRadius: "20px", fontSize: "22px", fontWeight: "bold"}}
-                                    onClick={() => this.props.history.push('/telescope-activity')}>Back</Button>
+                                    onClick={() => this.props.history.push({
+                                        pathname: '/object-page',
+                                        state: { title: "Nebula" }
+                                    })}>Back</Button>
                         </Col>
 
                         <Col>

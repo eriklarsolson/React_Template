@@ -82,7 +82,7 @@ export function canMoveComponent(toX: number, toY: number): boolean {
     }
 }
 
-function getIndex(value: any, arr: string | any[]) {
+export function getIndex(value: any, arr: string | any[]) {
     for(var i = 0; i < arr.length; i++) {
         if(arr[i] === value) {
             return i;

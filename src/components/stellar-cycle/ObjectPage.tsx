@@ -5,39 +5,73 @@ import stellarBackground from './stellarBackground.png';
 import rightarrow from './rightarrow.png';
 import leftarrow from './leftarrow.png';
 import Sidebar from "./Sidebar";
+import nebula from "./images/nebula_tmp.png"
+import stellar_black_hole from "./images/stellar_black_hole.png"
+import './StellarCycle.scss'
+import {getIndex} from "../circuilt-building/grid/Functionality";
 
 class ObjectPage extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            title: this.props.location.state.title,
-            temperatureValue: 0,
-            sizeValue: 0,
-            massValue: 0,
+            index: 0,
+            stellarObjects: [
+                {
+                    title: "Nebula",
+                    image: nebula,
+                    description: "test description for nebula",
+                    temperatureValue: 0,
+                    sizeValue: 0,
+                    massValue: 0,
+                },
+                {
+                    title: "Stellar Black Hole",
+                    image: stellar_black_hole,
+                    description: "test description for stellar black hole",
+                    temperatureValue: 0,
+                    sizeValue: 0,
+                    massValue: 0,
+                }
+            ]
         };
     }
 
-    render() {
-        const getObjectInfo = () => {
-            const object = this.state.title;
-
-            if(object === "Nebula") {
-                return "test nebula"
-            }
-
-            return "abc"
+    componentDidMount() {
+        const loadedTitle = this.props.location.state.title;
+        const samePlaceComponents = this.state.stellarObjects.filter((object: { title: any; }) => object.title === loadedTitle);
+        if(samePlaceComponents.length > 0) {
+            const index = getIndex(samePlaceComponents[0], this.state.stellarObjects);
+            this.setState({index})
         }
+    }
 
+    render() {
         const changeTemperature = (event: any, newValue: any) => {
-            this.setState({temperatureValue: newValue})
+            //this.setState({temperatureValue: newValue})
         }
 
         const changeSize = (event: any, newValue: any) => {
-            this.setState({sizeValue: newValue})
+            //this.setState({sizeValue: newValue})
         }
 
         const changeMass = (event: any, newValue: any) => {
-            this.setState({massValue: newValue})
+            //this.setState({massValue: newValue})
+        }
+
+        const leftArrow = () => {
+            if(this.state.index - 1 === -1) {
+                this.setState({index: this.state.stellarObjects.length - 1})
+            } else {
+                this.setState({index: this.state.index - 1})
+            }
+        }
+
+        const rightArrow = () => {
+            if(this.state.index + 1 === this.state.stellarObjects.length) {
+                this.setState({index: 0})
+            } else {
+                this.setState({index: this.state.index + 1})
+            }
         }
 
         return (
@@ -45,10 +79,10 @@ class ObjectPage extends React.Component<any, any> {
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${stellarBackground})`}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
-                            <Sidebar temperature={this.state.temperatureValue} changeTemperature={changeTemperature}
-                                     size={this.state.sizeValue} changeSize={changeSize}
-                                     mass={this.state.massValue} changeMass={changeMass}
-                                     description={getObjectInfo()} />
+                            <Sidebar temperature={this.state.stellarObjects[this.state.index].temperatureValue} changeTemperature={changeTemperature}
+                                     size={this.state.stellarObjects[this.state.index].sizeValue} changeSize={changeSize}
+                                     mass={this.state.stellarObjects[this.state.index].massValue} changeMass={changeMass}
+                                     description={this.state.stellarObjects[this.state.index].description} />
                         </Col>
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
@@ -57,7 +91,7 @@ class ObjectPage extends React.Component<any, any> {
                                     <Col>
                                         <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
                                             borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/stellar-cycle')}>Go Back</Button>
+                                                onClick={() => this.props.history.push('/telescope-activity')}>Go Back</Button>
                                     </Col>
 
                                     <Col>
@@ -68,31 +102,37 @@ class ObjectPage extends React.Component<any, any> {
                                         <Row>
                                             <Col className={"col-3 ml-auto"}>
                                                 <Button style={{float: "right", backgroundColor: "#29405B", width: "150px", marginLeft: "50px",
-                                                    borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}>Question</Button>
+                                                    borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                                        onClick={() => this.props.history.push({
+                                                            pathname: '/stellar-info-page',
+                                                            state: { title: this.state.stellarObjects[this.state.index].title }
+                                                        })}>More Info</Button>
                                             </Col>
                                         </Row>
                                     </Col>
                                 </Row>
 
-                                <Row>
-                                    <Col className={"col-2 justify-content-center align-content-center"}>
-                                        <img src={leftarrow} height="100px" alt={"arrow"} />
+                                <Row className={"justify-content-center"}>
+                                    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
+                                        <img className={"arrow"} src={leftarrow} height="100px" alt={"left arrow"}
+                                            onClick={leftArrow} />
                                     </Col>
 
-                                    <Col className={"d-flex justify-content-center align-content-center"} >
-                                        <div style={{width: "450px", height: "450px", lineHeight: "500px",
-                                            backgroundColor: "grey", borderRadius: "250px"}}>
-                                        </div>
+                                    <Col className={"col-6"}>
+                                        <img src={this.state.stellarObjects[this.state.index].image} style={{height: "450px"}} />
                                     </Col>
 
-                                    <Col className={"col-2 justify-content-center align-content-center"}>
-                                        <img src={rightarrow} height="100px" alt={"arrow"} />
+                                    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
+                                        <img className={"arrow"} src={rightarrow} height="100px" alt={"right arrow"}
+                                             onClick={rightArrow} />
                                     </Col>
                                 </Row>
 
                                 <Row>
                                     <Col>
-                                        <h3 style={{color: "white", fontWeight: "bold", marginTop: "20px"}}>{this.state.title}</h3>
+                                        <h3 style={{color: "white", fontWeight: "bold", marginTop: "20px"}}>
+                                            {this.state.stellarObjects[this.state.index].title}
+                                        </h3>
                                     </Col>
                                 </Row>
 

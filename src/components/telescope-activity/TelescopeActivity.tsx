@@ -64,7 +64,10 @@ class TelescopeActivity extends React.Component<any, any> {
                                     <Col>
                                         <Button style={{float: "right", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
                                             borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/stellar-cycle')}>Next</Button>
+                                                onClick={() => this.props.history.push({
+                                                    pathname: '/object-page',
+                                                    state: { title: "Nebula" }
+                                                })}>Next</Button>
                                     </Col>
                                 </Row>
                             </Container>
