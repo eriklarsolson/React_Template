@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import canvasBackground from './canvasBackground.png'
-import {TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE, TOOL_ERASER, TOOL_LASER} from "./MetalEngraving";
+import canvasBackground from './metal_background.png'
+import {TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE, TOOL_ERASER, TOOL_LASER, TOOL_OPTICS,TOOL_PRISM} from "./MetalEngraving";
+import optics from "./optics.png";
+import prism from "./prism.png";
 
 interface CanvasProps {
     width: number;
@@ -152,6 +154,26 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.closePath();
 
                     context.stroke();
+                } else if (tool === TOOL_OPTICS) {
+                    const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
+                    const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
+                    const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
+                    const widthY = Math.abs(originalMousePosition.y - newMousePosition.y);
+
+                    const image = new Image();
+                    image.src = optics
+
+                    context?.drawImage(image, startX, startY, widthX, widthY);
+                } else if (tool === TOOL_PRISM) {
+                    const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
+                    const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
+                    const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
+                    const widthY = Math.abs(originalMousePosition.y - newMousePosition.y);
+
+                    const image = new Image();
+                    image.src = prism
+
+                    context?.drawImage(image, startX, startY, widthX, widthY);
                 } else if (tool === TOOL_ELLIPSE) {
                     const startX = originalMousePosition.x;
                     const startY = originalMousePosition.y;

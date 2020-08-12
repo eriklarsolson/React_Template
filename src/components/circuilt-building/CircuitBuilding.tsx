@@ -10,9 +10,7 @@ import objective1wire from './objective1wire.png'
 import objective2wire from './objective2wire.png'
 import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
-import {ComponentTypes} from "../shared/models/ComponentTypes";
-import update from "immutability-helper";
-import {observe, setComponentsList} from "./grid/Functionality";
+import {setComponentsList, setCurrentLevel} from "./grid/Functionality";
 
 interface BoxMap {
     [key: string]: { x: number; y: number; type: string }
@@ -22,7 +20,6 @@ class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            showGrid: true,
             circuitPopupOpened: false,
             popupOpened: true,
             popupTitle: "Level 1 Objective",
@@ -40,7 +37,7 @@ class CircuitBuilding extends React.Component<any, any> {
             "needed. If you need to make changes to parts of your circuit, click the component you would like to remove " +
             "and then press the TRASH icon."],
             currentLevel: 1,
-            gridShowing: true,
+            showGrid: true,
             gridImages: [objective1wire, objective2wire, objective3wire]
         };
     }
@@ -57,8 +54,9 @@ class CircuitBuilding extends React.Component<any, any> {
 
             const titleString = "Level " + nextLevel + " Objective"
             this.setState({popupTitle: titleString})
+            setCurrentLevel(nextLevel)
             setComponentsList([])
-            openPopup()
+            cyclePopup()
         }
 
         const goToLastLevel = () => {
@@ -72,34 +70,30 @@ class CircuitBuilding extends React.Component<any, any> {
 
             const titleString = "Level " + pastLevel + " Objective"
             this.setState({popupTitle: titleString})
+            setCurrentLevel(pastLevel)
             setComponentsList([])
-            openPopup()
+            cyclePopup()
         }
 
-        const openPopup = () => {
-            this.setState({popupOpened: true})
+        const cyclePopup = () => {
+            this.setState({popupOpened: !this.state.popupOpened})
         }
 
-
-        const closePopup = () => {
-            this.setState({popupOpened: false})
+        const cycleCircuitPopup = () => {
+            this.setState({circuitPopupOpened: !this.state.circuitPopupOpened})
         }
 
-        const closeCircuitPopup = () => {
-            this.setState({circuitPopupOpened: false})
-        }
-
-        const openCircuitPopup = () => {
-            this.setState({circuitPopupOpened: true})
+        const cycleGrid = () => {
+            this.setState({showGrid: !this.state.showGrid})
         }
 
         return (
             <>
-                <CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={closeCircuitPopup} />
+                <CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />
 
                 <Popup open={this.state.popupOpened} title={this.state.popupTitle}
                                                   description={this.state.popupDescriptions[this.state.currentLevel - 1]}
-                                                  closePopup={closePopup} />
+                                                  closePopup={cyclePopup} />
 
                 <DndProvider backend={HTML5Backend}>
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
@@ -124,11 +118,11 @@ class CircuitBuilding extends React.Component<any, any> {
                                             <Row>
                                                 <Col className={"col-3 ml-auto"}>
                                                     <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openCircuitPopup}>Question</Button>
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={cycleCircuitPopup}>Question</Button>
                                                     <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openPopup}>Objective</Button>
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={cyclePopup}>Objective</Button>
                                                     <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Hide Grid</Button>
+                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={cycleGrid}>Toggle Grid</Button>
                                                 </Col>
                                             </Row>
                                         </Col>
@@ -137,7 +131,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: "0"}}>
                                         <Col>
                                             <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
-                                                              grid={this.state.gridShowing}  />
+                                                              showGrid={this.state.showGrid}  />
                                         </Col>
                                     </Row>
 

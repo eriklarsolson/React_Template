@@ -10,43 +10,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="The changes keep coming and they don't stop coming v4">
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/battery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/capacitor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/inductor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/resistor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/switch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/wire.png" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Implemented working grid square for circuit building component">
+      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/rotate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/lasercomponenticon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/metal_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/optics.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/prism.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGrid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGrid.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Inductor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Inductor.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/Box.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/ColorOverlay.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/ComponentTypes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/CustomDragLayer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/DraggableBox.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/Functionality.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/GridSquare.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/SixGrid.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/SixGridContainer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/Square.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/components/Battery.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/components/Capacitor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/components/Inductor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/components/Resistor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/components/Switch.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid2/components/Wire.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasericon.cur" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +56,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/circuilt-building/grid/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/metal-engraving" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -87,11 +73,11 @@
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals\Rate" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid\components\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid\components" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals\Engraving" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -122,7 +108,7 @@
       <workItem from="1596674584452" duration="2681000" />
       <workItem from="1596803434940" duration="636000" />
       <workItem from="1597094715531" duration="910000" />
-      <workItem from="1597150578020" duration="16253000" />
+      <workItem from="1597150578020" duration="26251000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -166,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596822678408</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented working grid square for circuit building component">
+      <created>1597190468826</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1597190468826</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +184,8 @@
     <MESSAGE value="The changes keep coming and they don't stop coming" />
     <MESSAGE value="The changes keep coming and they don't stop coming v3" />
     <MESSAGE value="The changes keep coming and they don't stop coming v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="The changes keep coming and they don't stop coming v4" />
+    <MESSAGE value="Implemented working grid square for circuit building component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented working grid square for circuit building component" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -246,19 +240,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1596822680900">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1597190471242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596822680900" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597190471242" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595958216715" />
-    <state x="817" y="181" width="585" height="624" key="find.popup" timestamp="1597185140752">
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597192452326">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
+    <state x="817" y="181" width="585" height="624" key="find.popup" timestamp="1597202184517">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
-    <state x="817" y="181" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597185140752" />
+    <state x="817" y="181" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597202184517" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -267,11 +265,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="292" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595374531681" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1597175495502">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1597200727202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="482" y="223" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1595717092125" />
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597175495502" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597200727202" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597164335514">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

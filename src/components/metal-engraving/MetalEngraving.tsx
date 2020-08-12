@@ -7,8 +7,12 @@ import Canvas from "./Canvas";
 import EngravingPopup from "../shared/modals/Engraving/EngravingPopup";
 import lasericon from "./lasericon.png";
 import lasericonon from "./lasericonon.png";
+import optics from "./optics_small.png";
+import prism from "./prism_small.png";
 
 export const TOOL_LASER = 'laser';
+export const TOOL_OPTICS = 'optics';
+export const TOOL_PRISM = 'prism';
 export const TOOL_LINE = 'line';
 export const TOOL_RECTANGLE = 'rectangle';
 export const TOOL_ELLIPSE = 'ellipse';
@@ -22,7 +26,7 @@ class MetalEngraving extends React.Component<any, any> {
             engravingPopupOpened: false,
             tool: TOOL_LINE,
             size: 15,
-            color: '#000000',
+            color: '#FFFFFF',
             fill: false,
             fillColor: '#444444',
             items: [],
@@ -54,6 +58,10 @@ class MetalEngraving extends React.Component<any, any> {
 
             if(tool === TOOL_LASER) {
                 this.setState({cursor: lasericonon})
+            } else if(tool === TOOL_OPTICS) {
+                this.setState({cursor: optics})
+            } else if(tool === TOOL_PRISM) {
+                this.setState({cursor: prism})
             } else {
                 this.setState({cursor: null})
             }
@@ -159,22 +167,76 @@ class MetalEngraving extends React.Component<any, any> {
 
                                     <Col>
                                         {/*TODO - Color Selector*/}
-
-                                        {(this.state.tool === TOOL_ELLIPSE || this.state.tool === TOOL_RECTANGLE) ?
-                                            <div>
-                                                <label htmlFor="">Fill In:</label>
-                                                <input type="checkbox" value={this.state.fill} style={{margin:'0 8'}}
-                                                       onChange={(e) => this.setState({fill: e.target.checked})} />
-                                                {this.state.fill ? <span>
-                                                  <label htmlFor="">with color:</label>
-                                                  <input type="color" value={this.state.fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />
-                                                </span> : ''}
-                                            </div> : ''}
                                         {(this.state.tool !== TOOL_ERASER) ?
-                                            <div className="options" style={{marginBottom:20}}>
-                                                <label htmlFor="">Color: </label>
-                                                <input type="color" value={this.props.color} onChange={(e) => this.setState({color: e.target.value})} />
-                                            </div> : ''}
+                                        <>
+                                            <Container fluid>
+                                                <Row>
+                                                    <h4>Light Color</h4>
+                                                </Row>
+                                                <Row>
+                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                        <Button style={{backgroundColor: "white", borderRadius: 100,
+                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
+                                                             onClick={() => this.setState({color: "white"})}
+                                                        />
+                                                    </Col>
+
+
+                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                        <Button style={{backgroundColor: "#EB3324", borderRadius: 100,
+                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
+                                                             onClick={() => this.setState({color: "#EB3324"})}
+                                                        />
+                                                    </Col>
+
+                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                        <Button style={{backgroundColor: "#F2F551", borderRadius: 100,
+                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
+                                                             onClick={() => this.setState({color: "#F2F551"})}
+                                                        />
+                                                    </Col>
+
+                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                        <Button style={{backgroundColor: "#76FA68", borderRadius: 100,
+                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
+                                                             onClick={() => this.setState({color: "#76FA68"})}
+                                                        />
+                                                    </Col>
+
+                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                        <Button style={{backgroundColor: "#3686F7", borderRadius: 100,
+                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
+                                                             onClick={() => this.setState({color: "#3686F7"})}
+                                                        />
+                                                    </Col>
+
+                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                        <Button style={{backgroundColor: "#EA3690", borderRadius: 100,
+                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
+                                                             onClick={() => this.setState({color: "#EA3690"})}
+                                                        />
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </>
+                                        : '' }
+
+                                        {/*OLD COLOR SELECTOR*/}
+                                        {/*{(this.state.tool === TOOL_ELLIPSE || this.state.tool === TOOL_RECTANGLE) ?*/}
+                                        {/*    <div>*/}
+                                        {/*        <label htmlFor="">Fill In:</label>*/}
+                                        {/*        <input type="checkbox" value={this.state.fill} style={{margin:'0 8'}}*/}
+                                        {/*               onChange={(e) => this.setState({fill: e.target.checked})} />*/}
+                                        {/*        {this.state.fill ? <span>*/}
+                                        {/*          <label htmlFor="">with color:</label>*/}
+                                        {/*          <input type="color" value={this.state.fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />*/}
+                                        {/*        </span> : ''}*/}
+                                        {/*    </div> : ''}*/}
+                                        {/*{(this.state.tool !== TOOL_ERASER) ?*/}
+                                        {/*    <div className="options" style={{marginBottom:20}}>*/}
+                                        {/*        <label htmlFor="">Color: </label>*/}
+                                        {/*        <input type="color" value={this.props.color} onChange={(e) => this.setState({color: e.target.value})} />*/}
+                                        {/*    </div> : ''}*/}
                                     </Col>
 
                                     <Col>

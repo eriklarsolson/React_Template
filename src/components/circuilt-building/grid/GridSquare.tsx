@@ -11,9 +11,10 @@ export interface GridSquareProps {
     y: number
     components: any
     children: any
+    showGrid: boolean
 }
 
-export const GridSquare: React.FC<GridSquareProps> = ({x, y, children}: GridSquareProps) => {
+export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid}: GridSquareProps) => {
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: [ComponentTypes.WIRE, ComponentTypes.BATTERY, ComponentTypes.RESISTOR
             ,ComponentTypes.SWITCH , ComponentTypes.INDUCTOR , ComponentTypes.CAPACITOR],
@@ -35,7 +36,7 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children}: GridSqua
             }}
             onMouseDown={() => setCurrentComponent(x, y)}
         >
-            <Square>{children}</Square>
+            <Square showGrid={showGrid}>{children}</Square>
             {isOver && !canDrop && <ColorOverlay color="red" />}
             {!isOver && canDrop && <ColorOverlay color="yellow" />}
             {isOver && canDrop && <ColorOverlay color="green" />}

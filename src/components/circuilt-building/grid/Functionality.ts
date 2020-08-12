@@ -3,6 +3,8 @@ import {ComponentTypes} from "../../shared/models/ComponentTypes";
 let observers: PositionObserver[] = []
 export type PositionObserver = ((component: {x: number, y: number, type: string}) => void) | null
 let currentComponent = 0;
+let currentLevel = 0;
+let passed = false;
 let currentX = -1;
 let currentY = -1;
 let components: { x: number; y: number; type: string}[] =  []
@@ -13,6 +15,14 @@ export function getComponents(): any {
 
 export function getCurrentComponent(): any {
     return components[currentComponent];
+}
+
+export function getPassed() {
+    return passed;
+}
+
+export function setCurrentLevel(newLevel: number) {
+    currentLevel = newLevel
 }
 
 export function setCurrentComponent(x: number, y: number) {
@@ -82,7 +92,7 @@ function getIndex(value: any, arr: string | any[]) {
 }
 
 export function moveComponent(toX: number, toY: number, type: string): void {
-    const samePlaceComponents = components.filter(component => component.x === toX && component.y === toY)
+    const samePlaceComponents = components.filter(component => component.x === toX && component.y === toY);
 
     if(samePlaceComponents.length > 0) {
         components.splice(currentComponent, 1);
@@ -94,15 +104,48 @@ export function moveComponent(toX: number, toY: number, type: string): void {
         if(currentX !== -1 && currentY !== -1) {
             components.splice(currentComponent, 1);
         }
-        components.push({x: toX, y: toY, type: type})
+        components.push({x: toX, y: toY, type: type});
     }
 
-    currentComponent = components.length - 1
+    currentComponent = components.length - 1;
 
-    emitChange()
+    checkIfPassed();
+
+    emitChange();
 }
 
 export function setComponentsList(newComponents: any): void {
     components = newComponents
     emitChange()
 }
+
+function checkIfPassed(): void {
+    const passingLevel: { x: number; y: number; type: string}[] = getCurrentLevelPass()
+
+    console.log(components)
+    console.log(passingLevel)
+
+    //TODO - Doesn't work
+    if(passingLevel.every(v => components.includes(v))) {
+        passed = true;
+    }
+}
+
+function getCurrentLevelPass(): any {
+    if(currentLevel === 0) {
+        let components: { x: number; y: number; type: string}[] =  []
+        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY})
+        return components
+    } else if(currentLevel === 1) {
+        let components: { x: number; y: number; type: string}[] =  []
+        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY})
+        return components
+    } else if(currentLevel === 2) {
+        let components: { x: number; y: number; type: string}[] =  []
+        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY})
+        return components
+    }
+
+    return []
+}
+
