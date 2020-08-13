@@ -5,8 +5,9 @@ import {Container, Row, Col} from "react-bootstrap";
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 
 const containerStyle: React.CSSProperties = {
-    width: 1000,
-    height: 500,
+    marginTop: 200,
+    width: 800,
+    height: 150,
 }
 
 export interface GridContainerProps {

@@ -10,7 +10,7 @@ export const Square: React.FC<SquareProps> = ({ children }) => {
         width: '100%',
         height: '100%',
         color: 'black',
-        backgroundColor: '#F8EDDD',
+        backgroundColor: 'transparent',
         border: '1px solid grey'
     }
 

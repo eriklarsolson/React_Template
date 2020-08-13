@@ -17,7 +17,7 @@ const boardStyle: React.CSSProperties = {
     flexWrap: 'wrap',
 }
 /** Styling properties applied to each square element */
-const squareStyle: React.CSSProperties = { width: '10%', height: '15%' }
+const squareStyle: React.CSSProperties = { width: '10%', height: '100%' }
 
 /**
  * The chessboard component

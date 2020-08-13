@@ -1,0 +1,9 @@
+.info-tooltip {
+  width: 200px;
+  background-color: black;
+  display: none;
+}
+
+.component-box:hover .info-tooltip {
+  display: block;
+}

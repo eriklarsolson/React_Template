@@ -9,6 +9,7 @@ import objective2wire from './objective2wire.png'
 import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
 import {setComponentsList, setCurrentLevel} from "./grid/Functionality";
+import {Slider, Typography, withStyles} from "@material-ui/core";
 
 interface BoxMap {
     [key: string]: { x: number; y: number; type: string }
@@ -139,11 +140,14 @@ class CircuitBuilding extends React.Component<any, any> {
                                                 borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToLastLevel}>Back</Button>
                                         </Col>
 
-                                        <Col className={"justify-content-center align-content center"}>
-                                            Volt selector
+                                        <Col className={"col-2 justify-content-center align-content center"}>
+                                            <Typography id="volt-slider" gutterBottom>
+                                                Volt Selector
+                                            </Typography>
+                                            <Slider value={0} aria-labelledby="volt-slider" />
                                         </Col>
 
-                                        <Col className={"col-2"}>
+                                        <Col className={"ml-auto col-2"}>
                                             <Button style={{float: "right", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
                                                 borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToNextLevel}>Next</Button>
                                         </Col>

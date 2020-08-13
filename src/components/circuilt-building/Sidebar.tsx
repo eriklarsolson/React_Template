@@ -9,7 +9,7 @@ class Sidebar extends React.Component {
                <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
                    <h3 style={{paddingTop: "15px"}}>Components</h3>
                    <Row>
-                       <Col>
+                       <Col className={"component-box"}>
                            <OneGridContainer componentType={"wire"} />
                        </Col>
                    </Row>
