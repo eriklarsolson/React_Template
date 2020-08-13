@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
+import {OneGridContainer} from "./grid/OneGridContainer";
 
 class Sidebar extends React.Component {
     render() {
@@ -9,31 +10,25 @@ class Sidebar extends React.Component {
                    <h3 style={{paddingTop: "15px"}}>Components</h3>
                    <Row>
                        <Col>
-                           a
+                           <OneGridContainer componentType={"concave"} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           b
+                           <OneGridContainer componentType={"convex"} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           c
+                           <OneGridContainer componentType={"flatmirror"} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           d
-                       </Col>
-                   </Row>
-
-                   <Row>
-                       <Col>
-                          e
+                           <OneGridContainer componentType={"viewpoint"} />
                        </Col>
                    </Row>
                </Container>

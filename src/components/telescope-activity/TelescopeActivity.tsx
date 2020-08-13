@@ -3,6 +3,7 @@ import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import satellite from './satellite.png'
+import {TelescopeGridContainer} from "./grid/TelescopeGridContainer";
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
@@ -43,7 +44,7 @@ class TelescopeActivity extends React.Component<any, any> {
                                 <Row>
                                     <Col className={"justify-content-center align-content-center"}>
                                         <div style={{width: "1000px", height: "400px", backgroundImage:`url(${satellite})`, margin: "auto"}}>
-
+                                            <TelescopeGridContainer />
                                         </div>
                                     </Col>
                                 </Row>
@@ -74,6 +75,11 @@ class TelescopeActivity extends React.Component<any, any> {
                         </Col>
                     </Row>
                 </Container>
+
+                {/*TODO - animation playground*/}
+                {/*<div>*/}
+
+                {/*</div>*/}
             </>
         )
     }

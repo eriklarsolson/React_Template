@@ -1,8 +1,6 @@
 import React, {useCallback, useEffect, useState} from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
-import {HTML5Backend} from "react-dnd-html5-backend";
-import { DndProvider } from 'react-dnd'
 import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import {SixGridContainer} from "./grid/SixGridContainer";
@@ -95,7 +93,6 @@ class CircuitBuilding extends React.Component<any, any> {
                                                   description={this.state.popupDescriptions[this.state.currentLevel - 1]}
                                                   closePopup={cyclePopup} />
 
-                <DndProvider backend={HTML5Backend}>
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                         <Row className={"flex-grow-1"} style={{margin: "0"}}>
                             <Col className={"col-2 vh-100"} style={{color: "white", padding: "0"}}>
@@ -107,7 +104,8 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: "3%"}}>
                                         <Col>
                                             <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}>Trash</Button>
+                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                                onClick={() => setComponentsList([])}>Trash</Button>
                                         </Col>
 
                                         <Col>
@@ -154,7 +152,6 @@ class CircuitBuilding extends React.Component<any, any> {
                             </Col>
                         </Row>
                     </Container>
-                </DndProvider>
             </>
         )
     }

@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
-import { ComponentTypes } from '../../../shared/models/ComponentTypes'
-import battery from './images/battery.png'
-import rotate from './images/rotate.png'
+import battery from './images/flatmirror.png'
 import { Container, Row, Col } from 'react-bootstrap'
+import {TelescopeTypes} from "../../../shared/models/TelescopeTypes";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -12,33 +11,18 @@ export interface ComponentProps {
     oneGridStyling: boolean,
 }
 
-export const Battery: React.FC<ComponentProps> = ({oneGridStyling}) => {
-
-    const [rotateDeg, setRotateDeg] = useState<number>(0)
-
+export const FlatMirror: React.FC<ComponentProps> = ({oneGridStyling}) => {
     const setMonitor = (monitor: any) => {
         return monitor.isDragging()
     }
 
     const [{ isDragging }, drag, preview] = useDrag({
-        item: { type: ComponentTypes.BATTERY },
+        item: { type: TelescopeTypes.FLATMIRROR },
         collect: (monitor) => ({
             isDragging: setMonitor(monitor),
         }),
 
     })
-
-    const clickRotate = () => {
-        if(rotateDeg + 90 > 360) {
-            setRotateDeg(0)
-        } else {
-            setRotateDeg(rotateDeg+90)
-        }
-        style = {
-            transform: "rotate(" + rotateDeg + "deg)",
-            cursor: 'move',
-        }
-    }
 
     let gridStyling: React.CSSProperties  = {};
     const setGridStyling = () => {
@@ -56,19 +40,13 @@ export const Battery: React.FC<ComponentProps> = ({oneGridStyling}) => {
             <DragPreviewImage connect={preview} src={battery} />
             <Container fluid style={{...gridStyling}}>
 
-                {!oneGridStyling &&
-                    <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                        <img src={rotate} onClick={clickRotate} />
-                    </div>
-                }
-
                 <Row className={"justify-content-center align-content-center"}>
                     <Col ref={drag}
                          style={{
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={battery} width={"90%"} />
+                        <img src={battery} />
                     </Col>
                 </Row>
             </Container>
