@@ -126,6 +126,47 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
         }
     };
 
+    //https://rlvandaveer.wordpress.com/2014/01/05/how-to-calculate-a-lighter-or-darker-shade-of-a-color-using-javascript/
+    function lighten(color: string, luminosity: number) {
+
+        // validate hex string
+        color = String(color).replace(/[^0-9a-f]/gi, '');
+        if (color.length < 6) {
+            color = color[0]+ color[0]+ color[1]+ color[1]+ color[2]+ color[2];
+        }
+        luminosity = luminosity || 0;
+
+        // convert to decimal and change luminosity
+        var newColor = "#", c, i, black = 0, white = 255;
+        for (i = 0; i < 3; i++) {
+            c = parseInt(color.substr(i*2,2), 16);
+            c = Math.round(Math.min(Math.max(black, c + (luminosity * white)), white)).toString(16);
+            newColor += ("00"+c).substr(c.length);
+        }
+        return newColor;
+    }
+
+
+
+    const getBurnColor = (color: string) => {
+        switch(color) {
+            case "#FFFFFF":
+                return lighten("#000000", 0.5);
+            case "#EB3324":
+                return lighten("#000000", 0.4);
+            case "#F2F551":
+                return lighten("#000000", 0.3);
+            case "#76FA68":
+                return lighten("#000000", 0.2);
+            case "#3686F7":
+                return lighten("#000000", 0.1);
+            case "#EA3690":
+                return lighten("#000000", 0.0);
+            default:
+                return "white"
+        }
+    }
+
     const draw = (originalMousePosition: Coordinate, newMousePosition: Coordinate) => {
 
         if (!canvasRef.current) {
@@ -140,7 +181,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                 if (tool === TOOL_LINE || tool === TOOL_ERASER || tool === TOOL_LASER) {
 
                     if (tool !== TOOL_ERASER) {
-                        context.strokeStyle = color;
+                        context.strokeStyle = getBurnColor(color);
                     } else {
                         context.globalCompositeOperation = "destination-out";
                         context.strokeStyle = "rgba(0,0,0,1)";

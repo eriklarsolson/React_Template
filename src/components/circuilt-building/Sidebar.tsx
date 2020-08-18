@@ -1,15 +1,17 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import {OneGridContainer} from "./grid/OneGridContainer";
+import Button from "react-bootstrap/Button";
+import {setComponentsList} from "./grid/Functionality";
 
-class Sidebar extends React.Component {
+class Sidebar extends React.Component<any, any> {
     render() {
         return (
             <>
                <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
-                   <h3 style={{paddingTop: "15px"}}>Components</h3>
+                   <h3 style={{paddingTop: "15px"}}>Modules</h3>
                    <Row>
-                       <Col className={"component-box"}>
+                       <Col>
                            <OneGridContainer componentType={"wire"} />
                        </Col>
                    </Row>
@@ -32,17 +34,26 @@ class Sidebar extends React.Component {
                        </Col>
                    </Row>
 
-                   <Row>
+
+                   {this.props.currentLevel > 1 && <Row>
                        <Col>
                            <OneGridContainer componentType={"inductor"} />
                        </Col>
-                   </Row>
+                   </Row>}
 
-                   <Row>
+                   {this.props.currentLevel > 2 && <Row>
                        <Col>
                            <OneGridContainer componentType={"capacitor"} />
                        </Col>
-                   </Row>
+                   </Row>}
+
+                    <Row className={"justify-content-center"}>
+                        <Col className={"col-6"}>
+                            <Button style={{backgroundColor: "grey", width: "150px", marginRight: "50px",
+                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                    onClick={() => setComponentsList([])}>Reset</Button>
+                        </Col>
+                    </Row>
                </Container>
 
             </>

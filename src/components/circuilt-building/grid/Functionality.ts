@@ -17,6 +17,12 @@ export function getCurrentComponent(): any {
     return components[currentComponent];
 }
 
+export function deleteCurrentComponent() {
+    components.splice(currentComponent, 1);
+    currentComponent = currentComponent - 1
+    emitChange();
+}
+
 export function getPassed() {
     return passed;
 }

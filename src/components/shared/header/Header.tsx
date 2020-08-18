@@ -17,7 +17,7 @@ const Header = (props: {location: any }) => {
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" >
                 <Navbar.Brand href="/">BOHRINGART</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

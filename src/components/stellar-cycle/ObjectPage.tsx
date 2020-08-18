@@ -9,6 +9,7 @@ import nebula from "./images/nebula_tmp.png"
 import stellar_black_hole from "./images/stellar_black_hole.png"
 import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
+import {Slider, withStyles} from "@material-ui/core";
 
 class ObjectPage extends React.Component<any, any> {
     constructor(props: any) {
@@ -47,15 +48,15 @@ class ObjectPage extends React.Component<any, any> {
 
     render() {
         const changeTemperature = (event: any, newValue: any) => {
-            //this.setState({temperatureValue: newValue})
+            this.setState({temperatureValue: newValue})
         }
 
         const changeSize = (event: any, newValue: any) => {
-            //this.setState({sizeValue: newValue})
+            this.setState({sizeValue: newValue})
         }
 
         const changeMass = (event: any, newValue: any) => {
-            //this.setState({massValue: newValue})
+            this.setState({massValue: newValue})
         }
 
         const leftArrow = () => {
@@ -74,11 +75,36 @@ class ObjectPage extends React.Component<any, any> {
             }
         }
 
+        //TODO - This current styling breaks the slider (doesn't slide smoothly)
+        const TimelineSlider = withStyles({
+            root: {
+                color: 'white',
+                height: 30,
+            },
+            thumb: {
+                height: 30,
+                width: 10,
+                backgroundColor: '#fff',
+                borderRadius: 0,
+                marginTop: 0,
+                '&:focus, &:hover, &$active': {
+                    boxShadow: 'inherit',
+                },
+            },
+            track: {
+                height: 30,
+            },
+            rail: {
+                height: 30,
+                border: "7px solid #29405B"
+            },
+        })(Slider);
+
         return (
             <>
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${stellarBackground})`}}>
-                    <Row className={"flex-grow-1"}>
-                        <Col className={"col-2 vh-100"} style={{color: "white"}}>
+                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0, backgroundImage:`url(${stellarBackground})`}}>
+                    <Row className={"flex-grow-1"} style={{margin: 0}}>
+                        <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
                             <Sidebar temperature={this.state.stellarObjects[this.state.index].temperatureValue} changeTemperature={changeTemperature}
                                      size={this.state.stellarObjects[this.state.index].sizeValue} changeSize={changeSize}
                                      mass={this.state.stellarObjects[this.state.index].massValue} changeMass={changeMass}
@@ -112,7 +138,7 @@ class ObjectPage extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row className={"justify-content-center"}>
+                                <Row className={"justify-content-center"} style={{margin: 0,}}>
                                     <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
                                         <img className={"arrow"} src={leftarrow} height="100px" alt={"left arrow"}
                                             onClick={leftArrow} />
@@ -137,9 +163,16 @@ class ObjectPage extends React.Component<any, any> {
                                 </Row>
 
                                 <Row style={{margin: "3%"}}>
-                                    <Col className={"d-flex justify-content-center align-content-center"}>
-                                        <Button style={{float: "right", backgroundColor: "#29405B", width: "15%",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                    <Col className={"col-4"}>
+
+                                    </Col>
+
+                                    <Col className={"col-4 justify-content-center align-content-center"}>
+                                        <TimelineSlider />
+                                    </Col>
+
+                                    <Col className={"col-4 d-flex justify-content-center align-content-center"}>
+                                        <Button style={{backgroundColor: "#3BD186", fontSize: "20px", fontWeight: "bold"}}
                                                 onClick={() => this.props.history.push('/stellar-cycle')}>All Stages</Button>
                                     </Col>
                                 </Row>

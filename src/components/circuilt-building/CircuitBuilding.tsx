@@ -8,12 +8,9 @@ import objective1wire from './objective1wire.png'
 import objective2wire from './objective2wire.png'
 import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
-import {setComponentsList, setCurrentLevel} from "./grid/Functionality";
+import {deleteCurrentComponent, setComponentsList, setCurrentLevel} from "./grid/Functionality";
 import {Slider, Typography, withStyles} from "@material-ui/core";
-
-interface BoxMap {
-    [key: string]: { x: number; y: number; type: string }
-}
+import 'font-awesome/css/font-awesome.min.css';
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -86,6 +83,34 @@ class CircuitBuilding extends React.Component<any, any> {
             this.setState({showGrid: !this.state.showGrid})
         }
 
+        //TODO - This current styling breaks the slider (doesn't slide smoothly)
+        const VoltageSlider = withStyles({
+            root: {
+                color: '#29405B',
+                height: 6,
+            },
+            thumb: {
+                height: 24,
+                width: 24,
+                backgroundColor: '#29405B',
+                border: '2px solid currentColor',
+                marginTop: -10,
+                marginLeft: -12,
+                '&:focus, &:hover, &$active': {
+                    boxShadow: 'inherit',
+                },
+            },
+            track: {
+                height: 6,
+                borderRadius: 2,
+                backgroundColor: '#29405B',
+            },
+            rail: {
+                height: 6,
+                borderRadius: 2,
+            },
+        })(Slider);
+
         return (
             <>
                 <CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />
@@ -97,7 +122,7 @@ class CircuitBuilding extends React.Component<any, any> {
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                         <Row className={"flex-grow-1"} style={{margin: "0"}}>
                             <Col className={"col-2 vh-100"} style={{color: "white", padding: "0"}}>
-                                <Sidebar />
+                                <Sidebar currentLevel={this.state.currentLevel} />
                             </Col>
 
                             <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
@@ -105,8 +130,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: "3%"}}>
                                         <Col>
                                             <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => setComponentsList([])}>Trash</Button>
+                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToLastLevel}>Back</Button>
                                         </Col>
 
                                         <Col>
@@ -137,14 +161,16 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: "3%"}}>
                                         <Col className={"col-2"}>
                                             <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToLastLevel}>Back</Button>
+                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                                    onClick={deleteCurrentComponent}><i className="fa fa-trash" /></Button>
+                                        {/*    fa-spin */}
                                         </Col>
 
                                         <Col className={"col-2 justify-content-center align-content center"}>
                                             <Typography id="volt-slider" gutterBottom>
                                                 Volt Selector
                                             </Typography>
-                                            <Slider value={0} aria-labelledby="volt-slider" />
+                                            <VoltageSlider aria-labelledby="volt-slider" />
                                         </Col>
 
                                         <Col className={"ml-auto col-2"}>

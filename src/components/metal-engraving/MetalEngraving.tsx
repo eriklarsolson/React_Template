@@ -175,9 +175,9 @@ class MetalEngraving extends React.Component<any, any> {
                                                 </Row>
                                                 <Row>
                                                     <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                        <Button style={{backgroundColor: "white", borderRadius: 100,
+                                                        <Button style={{backgroundColor: "#FFFFFF", borderRadius: 100,
                                                             width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                             onClick={() => this.setState({color: "white"})}
+                                                             onClick={() => this.setState({color: "#FFFFFF"})}
                                                         />
                                                     </Col>
 
