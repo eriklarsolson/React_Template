@@ -25,9 +25,10 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
         position: "absolute",
         right: rightValue,
         top: 10,
-        width: 200,
-        height: 100,
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        width: 400,
+        height: "auto",
+        minHeight: 100,
+        backgroundColor: "rgba(82, 82, 82, 0.9)",
         transition: ".3s ease-in-out",
         zIndex: zIndex,
         textAlign: "left",
@@ -39,7 +40,7 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
             setZIndex(-1)
             setTooltipShowing(false)
         } else {
-            setRightValue(-100)
+            setRightValue(-300)
             setZIndex(1)
             setTooltipShowing(true)
         }
@@ -54,17 +55,17 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
     const getTooltipDescription = () => {
         switch (components[0].type) {
             case 'wire':
-                return "wire description";
+                return "Used to direct flow of current, has zero resistance";
             case 'battery':
-                return "battery description";
+                return "Device used to provide energy to the circuit. Contains positive and negative sides. From chemical potential differences.Measured in units of volts (V)";
             case 'resistor':
-                return "resistor description";
+                return "”Resists” the flow of electrons, reduces energy of the current flowing through the circuit. Units: Ohms (Ω)";
             case 'switch':
-                return "switch description";
+                return "Object designed to continue or completely stop the flow of current by opening or closing the loop.";
             case 'inductor':
-                return "inductor description";
+                return "Much like a battery, but it stores electrical energy using an electrical field. Measured in units of farads (F)";
             case 'capacitor':
-                return "capacitor description";
+                return "Stores electrical energy in a magnetic field. Units: Henry (H)U";
             default:
                 return "default description";
         }
@@ -81,10 +82,10 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
 
                 <div style={tooltipStyle}>
                     <Container fluid>
-                        <Row>
-                            <p style={{fontWeight: "bold"}}>{components[0].type}</p>
+                        <Row style={{padding: 0}}>
+                            <p style={{fontWeight: "bold", margin: 0}}>{components[0].type}</p>
                         </Row>
-                        <Row>
+                        <Row style={{padding: 0}}>
                             {getTooltipDescription()}
                         </Row>
                     </Container>

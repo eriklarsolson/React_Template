@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import lasercomponenticon from "./lasercomponenticon.png";
 import optics from "./optics.png";
 import prism from "./prism.png";
+import Button from "react-bootstrap/Button";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -83,6 +84,14 @@ class Sidebar extends React.Component<any, any> {
                                className={this.props.tool === TOOL_ERASER  ? 'item-active' : 'item'}
                                onClick={() => this.props.setTool(TOOL_ERASER)}
                            >Eraser</button>
+                       </Col>
+                   </Row>
+
+                   <Row className={"justify-content-center"}>
+                       <Col className={"col-8"}>
+                           <Button style={{float: "left", backgroundColor: "#F8EDDD", width: "150px", marginRight: "50px",
+                               fontSize: "20px", fontWeight: "bold", color: "black"}}
+                                   onClick={this.props.clearCanvas}>Reset</Button>
                        </Col>
                    </Row>
                </Container>

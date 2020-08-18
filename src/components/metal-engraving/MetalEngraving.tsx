@@ -9,6 +9,8 @@ import lasericon from "./lasericon.png";
 import lasericonon from "./lasericonon.png";
 import optics from "./optics_small.png";
 import prism from "./prism_small.png";
+import {Slider, Typography, withStyles} from "@material-ui/core";
+import ViewpointPopup from "../shared/modals/ViewpointPopup";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -24,6 +26,7 @@ class MetalEngraving extends React.Component<any, any> {
         this.state = {
             popupOpened: true,
             engravingPopupOpened: false,
+            viewpointPopupOpened: false,
             tool: TOOL_LINE,
             size: 15,
             color: '#FFFFFF',
@@ -51,6 +54,10 @@ class MetalEngraving extends React.Component<any, any> {
 
         const closeEngravingPopup = () => {
             this.setState({engravingPopupOpened: false})
+        }
+
+        const toggleViewpointPopup = () => {
+            this.setState({viewpointPopupOpened: !this.state.viewpointPopupOpened})
         }
 
         const setTool = (tool: string) => {
@@ -99,6 +106,34 @@ class MetalEngraving extends React.Component<any, any> {
             }
         }
 
+        //TODO - This current styling breaks the slider (doesn't slide smoothly)
+        const SizeSlider = withStyles({
+            root: {
+                color: '#29405B',
+                height: 6,
+            },
+            thumb: {
+                height: 24,
+                width: 24,
+                backgroundColor: '#29405B',
+                border: '2px solid currentColor',
+                marginTop: -10,
+                marginLeft: -12,
+                '&:focus, &:hover, &$active': {
+                    boxShadow: 'inherit',
+                },
+            },
+            track: {
+                height: 6,
+                borderRadius: 2,
+                backgroundColor: '#29405B',
+            },
+            rail: {
+                height: 6,
+                borderRadius: 2,
+            },
+        })(Slider);
+
         return (
             <>
 
@@ -115,10 +150,13 @@ class MetalEngraving extends React.Component<any, any> {
                <EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}
                                addStencil={addStencil} />
 
+                <ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />
+
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
-                            <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size} setTool={setTool} />
+                            <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size}
+                                     setTool={setTool} clearCanvas={clearCanvas} />
                         </Col>
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
@@ -126,7 +164,8 @@ class MetalEngraving extends React.Component<any, any> {
                                 <Row style={{margin: "3%"}}>
                                     <Col>
                                         <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={clearCanvas}>Clear</Button>
+                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                                onClick={() => this.props.history.push('/circuit-building')}>Back</Button>
                                     </Col>
 
                                     <Col>
@@ -145,7 +184,7 @@ class MetalEngraving extends React.Component<any, any> {
                                                 <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
                                                     borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openPopup}>Objective</Button>
                                                 <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>View Point</Button>
+                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={toggleViewpointPopup}>View Point</Button>
                                             </Col>
                                         </Row>
                                     </Col>
@@ -159,20 +198,15 @@ class MetalEngraving extends React.Component<any, any> {
                                 </Row>
 
                                 <Row style={{margin: "3%"}}>
-                                    <Col className={"col-2"}>
-                                        <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/circuit-building')}>Back</Button>
-                                    </Col>
+                                    {/*<Col className={"col-2"}>*/}
+                                    {/*    */}
+                                    {/*</Col>*/}
 
-                                    <Col>
+                                    <Col className={"col-4"}>
                                         {/*TODO - Color Selector*/}
                                         {(this.state.tool !== TOOL_ERASER) ?
                                         <>
                                             <Container fluid>
-                                                <Row>
-                                                    <h4>Light Color</h4>
-                                                </Row>
                                                 <Row>
                                                     <Col style={{padding: 0, margin: 5}} className={"col-1"}>
                                                         <Button style={{backgroundColor: "#FFFFFF", borderRadius: 100,
@@ -239,8 +273,12 @@ class MetalEngraving extends React.Component<any, any> {
                                         {/*    </div> : ''}*/}
                                     </Col>
 
-                                    <Col>
+                                    <Col className={"col-2"}>
                                         {/*TODO - Shapes of filters*/}
+                                        <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
+                                            Width
+                                        </Typography>
+                                        <SizeSlider aria-labelledby="width-slider" />
 
                                         <div className="options" style={{marginBottom:20}}>
                                             <label htmlFor="">Size: </label>
@@ -249,6 +287,13 @@ class MetalEngraving extends React.Component<any, any> {
                                     </Col>
 
                                     <Col className={"col-2"}>
+                                        <Typography id="size-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
+                                            Size
+                                        </Typography>
+                                        <SizeSlider aria-labelledby="size-slider" />
+                                    </Col>
+
+                                    <Col className={"col-3"}>
                                         <Button style={{float: "right", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
                                             borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
                                                 onClick={() => this.props.history.push('/telescope-activity')}>Next</Button>
