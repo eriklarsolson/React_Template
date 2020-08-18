@@ -27,14 +27,14 @@ class MetalEngraving extends React.Component<any, any> {
             popupOpened: true,
             engravingPopupOpened: false,
             viewpointPopupOpened: false,
-            tool: TOOL_LINE,
+            tool: TOOL_LASER,
             size: 15,
             color: '#FFFFFF',
             fill: false,
             fillColor: '#444444',
             items: [],
             canvasRef: React.createRef(),
-            cursor: null,
+            cursor: lasericonon,
             toolActive: true,
         };
     }

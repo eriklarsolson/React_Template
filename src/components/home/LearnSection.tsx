@@ -21,6 +21,7 @@ class LearnSection extends React.Component<any, any> {
         let images = [
             hubble,
             hubble,
+            hubble,
             hubble
         ]
 
@@ -32,6 +33,10 @@ class LearnSection extends React.Component<any, any> {
             {
                 Title: "Lasers and Lenses",
                 Description: "Learn how lenses manipulate light to understand how your telescope sees distant stars. Experiment with the variables that affect the image formed when shining light through a lens, and begin controlling the type of image you see by manipulating these variables. Understand how light moves through space and different mediums",
+            },
+            {
+                Title: "To The Stars",
+                Description: "Rocket building activity",
             },
             {
                 Title: "Stellar Life Cycle",
@@ -55,7 +60,11 @@ class LearnSection extends React.Component<any, any> {
                            </Row>
 
                            <Row style={{margin: "10px"}}>
-                               <div className={"number-block"} style={{width: "100px", height: "100px", backgroundColor: "#29405B"}} onClick={() => this.changeLearnSection(2)}><h1>03</h1></div>
+                               <div className={"number-block"} style={{width: "100px", height: "100px", backgroundColor: "#29405B"}} onClick={() => this.changeLearnSection(2)}><h1>02</h1></div>
+                           </Row>
+
+                           <Row style={{margin: "10px"}}>
+                               <div className={"number-block"} style={{width: "100px", height: "100px", backgroundColor: "#29405B"}} onClick={() => this.changeLearnSection(3)}><h1>03</h1></div>
                            </Row>
                        </Col>
 

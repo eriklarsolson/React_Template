@@ -23,7 +23,8 @@ class Popup extends React.Component<any, any> {
                         </Row>
 
                         <Row className={"justify-content-center align-content-center"} style={{paddingBottom: "50px"}}>
-                            <Button variant="primary" style={{backgroundColor: "#3BD186", width: "25%"}} onClick={this.props.closePopup}>
+                            <Button variant="primary" className={"green-button"} style={{float: "right", width: "25%",
+                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} onClick={this.props.closePopup}>
                                 Got it!
                             </Button>
                         </Row>

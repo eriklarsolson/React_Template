@@ -4,7 +4,8 @@ import lasercomponenticon from "./lasercomponenticon.png";
 import optics from "./optics.png";
 import prism from "./prism.png";
 import Button from "react-bootstrap/Button";
-
+import Accordion from "react-bootstrap/Accordion"
+import {Card} from "@material-ui/core";
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
 export const TOOL_PRISM = 'prism';
@@ -47,35 +48,52 @@ class Sidebar extends React.Component<any, any> {
                        </Col>
                    </Row>
 
-                   <Row style={{margin: "5px"}}>
-                       <Col>
-                           <button
-                               style={{width: "100px", height: "100px"}}
-                               className={this.props.tool === TOOL_LINE  ? 'item-active' : 'item'}
-                               onClick={() => this.props.setTool(TOOL_LINE)}
-                           >Line</button>
-                       </Col>
-                   </Row>
-
-                   <Row style={{margin: "5px"}}>
-                       <Col>
-                           <button
-                               style={{width: "100px", height: "100px"}}
-                               className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
-                               onClick={() => this.props.setTool(TOOL_ELLIPSE)}
-                           >Ellipse</button>
-                       </Col>
-                   </Row>
-
-                   <Row style={{margin: "5px"}}>
-                       <Col>
-                           <button
-                               style={{width: "100px", height: "100px"}}
-                               className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
-                               onClick={() => this.props.setTool(TOOL_RECTANGLE)}
-                           >Rectangle</button>
-                       </Col>
-                   </Row>
+                   <Accordion defaultActiveKey="1">
+                       <Container>
+                           <Row className={"justify-content-center"}>
+                               <Col className="col-8" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
+                                   <button
+                                       style={{width: "100px", height: "100px"}}
+                                       className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
+                                       onClick={() => this.props.setTool(TOOL_RECTANGLE)}
+                                   >Rectangle</button>
+                               </Col>
+                           </Row>
+                           <Row className={"justify-content-center"}>
+                               <Col className="col-8" style={{backgroundColor: "#C4C4C4"}}>
+                                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                       <i className="fa fa-arrow-down" style={{color: "#42949F"}} />
+                                   </Accordion.Toggle>
+                               </Col>
+                           </Row>
+                           <Row className={"justify-content-center"}>
+                               <Col className="col-8" style={{backgroundColor: "#F8EDDD"}}>
+                                   <Accordion.Collapse eventKey="0">
+                                       <Container fluid>
+                                           <Row>
+                                               <Col style={{margin: 5}}>
+                                                   <button
+                                                       style={{width: "100px", height: "100px"}}
+                                                       className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
+                                                       onClick={() => this.props.setTool(TOOL_ELLIPSE)}
+                                                   >Ellipse</button>
+                                               </Col>
+                                           </Row>
+                                           <Row>
+                                               <Col style={{margin: 5}}>
+                                                   <button
+                                                       style={{width: "100px", height: "100px"}}
+                                                       className={this.props.tool === TOOL_LINE  ? 'item-active' : 'item'}
+                                                       onClick={() => this.props.setTool(TOOL_LINE)}
+                                                   >Line</button>
+                                               </Col>
+                                           </Row>
+                                       </Container>
+                                   </Accordion.Collapse>
+                               </Col>
+                           </Row>
+                       </Container>
+                   </Accordion>
 
                    <Row style={{margin: "5px"}}>
                        <Col>
@@ -87,7 +105,7 @@ class Sidebar extends React.Component<any, any> {
                        </Col>
                    </Row>
 
-                   <Row className={"justify-content-center"}>
+                   <Row className={"justify-content-center"} style={{margin: 0, position: "absolute", bottom: "10%"}}>
                        <Col className={"col-8"}>
                            <Button style={{backgroundColor: "#F8EDDD", width: "150px", color: "black",
                                fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}

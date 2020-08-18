@@ -13,14 +13,6 @@ import {
 import "./StellarCycle.scss";
 
 class Sidebar extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            massValue: 0,
-            massClass: "Average"
-        };
-    }
-
     render() {
         //TODO - This current styling breaks the slider (doesn't slide smoothly)
         const StellarSlider = withStyles({
@@ -50,9 +42,10 @@ class Sidebar extends React.Component<any, any> {
             },
         })(Slider);
 
-        const handleMassChange = (event: { target: { value: any; }; }) => {
-            this.setState({massClass: event.target.value});
-        };
+        let massClassString = "Average"
+        if(this.props.massClass === 1) {
+            massClassString = "Massive"
+        }
 
         return (
             <>
@@ -64,9 +57,10 @@ class Sidebar extends React.Component<any, any> {
                        <Col>
                            <FormControl component="fieldset" style={{float: "left", margin: "10%"}}>
                                <FormLabel component="legend" style={{color: "white", fontSize: "20px", fontWeight: "bold"}}>Mass Class</FormLabel>
-                               <RadioGroup aria-label="gender" name="gender1" value={this.state.massClass} onChange={handleMassChange}>
-                                   <FormControlLabel value="female" control={<Radio />} label="Average" />
-                                   <FormControlLabel value="male" control={<Radio />} label="Massive" />
+                               <RadioGroup aria-label="gender" name="gender1" value={massClassString}
+                                           onChange={this.props.handleMassChange}>
+                                   <FormControlLabel value="Average" control={<Radio />} label="Average" />
+                                   <FormControlLabel value="Massive" control={<Radio />} label="Massive" />
                                </RadioGroup>
                            </FormControl>
                        </Col>

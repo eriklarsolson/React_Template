@@ -17,19 +17,7 @@ import whitedwarf from './images/whitedwarf.png';
 import 'font-awesome/css/font-awesome.min.css';
 
 class StellarCycle extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            popupOpened: true,
-        };
-    }
-
-
     render() {
-        const closePopup = () => {
-            this.setState({popupOpened: false})
-        }
-
         const goToObjectPage = (title: string) => {
             this.props.history.push({
                 pathname: '/object-page',
@@ -39,11 +27,6 @@ class StellarCycle extends React.Component<any, any> {
 
         return (
             <>
-                <Popup title={"03 Stellar Life Cycle"}
-                       open={this.state.popupOpened}
-                       description={"DESCRIPTION HERE"}
-                       closePopup={closePopup} />
-
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${stellarBackground})`}}>
                     <Row style={{margin: "3%"}}>
                         <Col>
@@ -51,7 +34,7 @@ class StellarCycle extends React.Component<any, any> {
                         </Col>
                     </Row>
 
-                    <Row>
+                    <Row style={{margin: 0}}>
                         <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                             <Container fluid  onClick={() => goToObjectPage("Nebula")}>
                                 <Row>
@@ -69,7 +52,7 @@ class StellarCycle extends React.Component<any, any> {
                         </Col>
 
                         <Col style={{padding: "0"}}>
-                            <Row className={"justify-content-center align-content-center"} style={{marginBottom: "5%"}}>
+                            <Row className={"justify-content-center align-content-center"} style={{margin: 0}}>
                                 <Col className={"col-3 justify-content-center align-content-center  stellar-circle"} style={{padding: "0"}}>
                                     <Container fluid  onClick={() => goToObjectPage("Avg Star")}>
                                         <Row>
@@ -80,7 +63,7 @@ class StellarCycle extends React.Component<any, any> {
 
                                         <Row>
                                             <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Avg Star</p>
+                                                <p style={{fontSize: "24px", color: "white"}}>Average Star</p>
                                             </Col>
                                         </Row>
                                     </Container>
@@ -135,7 +118,7 @@ class StellarCycle extends React.Component<any, any> {
                                 </Col>
                             </Row>
 
-                            <Row className={"justify-content-center align-content-center"} >
+                            <Row className={"justify-content-center align-content-center"} style={{margin: 0}}>
                                 <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                                     <Container fluid  onClick={() => goToObjectPage("Massive Star")}>
                                         <Row>
@@ -217,23 +200,27 @@ class StellarCycle extends React.Component<any, any> {
                         </Col>
                     </Row>
 
-                    <Row style={{margin: "3%"}}>
+                    <Row style={{margin: "20px"}}>
                         <Col>
-                            <Button style={{color: "white", width: "15%", backgroundColor: "#3BD186",
-                                float: "left", borderRadius: "20px", fontSize: "22px", fontWeight: "bold"}}
+                            <Button className={"green-button"} style={{float: "left", width: 100,
+                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                     onClick={() => this.props.history.push({
                                         pathname: '/object-page',
                                         state: { title: "Nebula" }
-                                    })}><i className="fa fa-arrow-left" /></Button>
+                                    })}>
+                                <i className="fa fa-arrow-left" />
+                            </Button>
                         </Col>
 
                         <Col>
-                            <Button style={{color: "white", width: "15%", backgroundColor: "#3BD186",
-                                float: "right", borderRadius: "20px", fontSize: "22px", fontWeight: "bold"}}
+                            <Button className={"green-button"} style={{float: "right", width: 200,
+                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                     onClick={() => this.props.history.push({
                                         pathname: '/about',
                                         state: { popupOpened: true }
-                                    })}>Complete</Button>
+                                    })}>
+                                Complete
+                            </Button>
                         </Col>
                     </Row>
                 </Container>

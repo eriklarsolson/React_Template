@@ -34,7 +34,8 @@ class CircuitBuilding extends React.Component<any, any> {
             "and then press the TRASH icon."],
             currentLevel: 1,
             showGrid: true,
-            gridImages: [objective1wire, objective2wire, objective3wire]
+            gridImages: [objective1wire, objective2wire, objective3wire],
+            selectedVoltage: 0
         };
     }
 
@@ -69,6 +70,18 @@ class CircuitBuilding extends React.Component<any, any> {
             setCurrentLevel(pastLevel)
             setComponentsList([])
             cyclePopup()
+        }
+
+        const handleVoltageChange = (event: any, newValue: number | number[]) => {
+            this.setState({selectedVoltage: newValue});
+        };
+
+        const changeVoltage = (increase: boolean) => {
+            if (increase && (this.state.selectedVoltage+1) <= 10) {
+                this.setState({selectedVoltage: this.state.selectedVoltage + 1});
+            } else if(!increase && (this.state.selectedVoltage-1) >= 0) {
+                this.setState({selectedVoltage: this.state.selectedVoltage - 1});
+            }
         }
 
         const cyclePopup = () => {
@@ -169,10 +182,29 @@ class CircuitBuilding extends React.Component<any, any> {
                                         </Col>
 
                                         <Col className={"col-2 justify-content-center align-content center"}>
-                                            <Typography id="volt-slider" gutterBottom>
+                                            <Typography id="volt-slider" gutterBottom style={{color: "#29405B"}}>
                                                 Volt Selector
                                             </Typography>
-                                            <VoltageSlider aria-labelledby="volt-slider" />
+                                            <Container fluid>
+                                                <Row>
+                                                    <Col className={"col-1"}>
+                                                        <i className="fa fa-minus" style={{cursor: "pointer", color: "#29405B"}}
+                                                           onClick={() => changeVoltage(false)} />
+                                                    </Col>
+                                                    <Col>
+                                                        <VoltageSlider aria-labelledby="volt-slider" step={1}
+                                                                       marks min={0} max={10} value={this.state.selectedVoltage}
+                                                                       onChange={handleVoltageChange} />
+                                                    </Col>
+                                                    <Col className={"col-1"}>
+                                                        <i className="fa fa-plus" style={{cursor: "pointer", color: "#29405B"}}
+                                                           onClick={() => changeVoltage(true)} />
+                                                    </Col>
+                                                    <Col className={"col-1"}>
+                                                        <p style={{color: "#29405B", fontWeight: "bold"}}>{this.state.selectedVoltage}v</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
                                         </Col>
 
                                         <Col className={"ml-auto col-2"}>
