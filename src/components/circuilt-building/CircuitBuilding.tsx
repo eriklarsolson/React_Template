@@ -127,26 +127,29 @@ class CircuitBuilding extends React.Component<any, any> {
 
                             <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
                                 <Container fluid style={{margin: "0", padding: "0"}}>
-                                    <Row style={{margin: "3%"}}>
-                                        <Col>
-                                            <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToLastLevel}><i className="fa fa-arrow-left" /></Button>
+                                    <Row style={{margin: 0}}>
+                                        <Col className="col-2" style={{margin: "3%"}}>
+                                            <Button className={"green-button"} style={{float: "left", width: 100,
+                                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                                    onClick={goToLastLevel}><i className="fa fa-arrow-left" /></Button>
                                         </Col>
 
-                                        <Col>
+                                        <Col style={{margin: "3%"}}>
                                             <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Circuit Board level {this.state.currentLevel}</p>
                                         </Col>
 
-                                        <Col className={"col-4"}>
-                                            <Row>
-                                                <Col className={"col-3 ml-auto"}>
-                                                    <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={cycleCircuitPopup}>Question</Button>
-                                                    <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={cyclePopup}>Objective</Button>
-                                                    <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                        borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={cycleGrid}>Toggle Grid</Button>
-                                                </Col>
+                                        <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
+                                            <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
+                                                    clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={cycleCircuitPopup}>Question</Button>
+                                            </Row>
+                                            <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
+                                                    clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}  onClick={cyclePopup}>Objective</Button>
+                                            </Row>
+                                            <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                <Button className={"blue-button"} style={{width: 200,
+                                                    clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={cycleGrid}>Toggle Grid</Button>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -173,8 +176,9 @@ class CircuitBuilding extends React.Component<any, any> {
                                         </Col>
 
                                         <Col className={"ml-auto col-2"}>
-                                            <Button style={{float: "right", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToNextLevel}>Next</Button>
+                                            <Button className={"green-button"} style={{float: "right", width: 200,
+                                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                                    onClick={goToNextLevel}>Next</Button>
                                         </Col>
                                     </Row>
                                 </Container>

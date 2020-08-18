@@ -153,18 +153,18 @@ class MetalEngraving extends React.Component<any, any> {
                 <ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
-                    <Row className={"flex-grow-1"}>
-                        <Col className={"col-2 vh-100"} style={{color: "white"}}>
+                    <Row className={"flex-grow-1"} style={{margin: 0}}>
+                        <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
                             <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size}
                                      setTool={setTool} clearCanvas={clearCanvas} />
                         </Col>
 
-                        <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
+                        <Col className={"col-8"} style={{margin: "0", padding: "0"}}>
                             <Container fluid style={{margin: "0", padding: "0", cursor: `url(${this.state.cursor}), auto`}}>
                                 <Row style={{margin: "3%"}}>
-                                    <Col>
-                                        <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                                    <Col className={"col-3"}>
+                                        <Button className={"green-button"} style={{float: "left", width: 100,
+                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                                 onClick={() => this.props.history.push('/circuit-building')}>
                                             <i className="fa fa-arrow-left" />
                                         </Button>
@@ -173,27 +173,10 @@ class MetalEngraving extends React.Component<any, any> {
                                     <Col>
                                         <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Metal Engraving</p>
                                     </Col>
-
-                                    <Col className={"col-4"}>
-                                        <Row>
-                                            <Col className={"col-3 ml-auto"}>
-                                                <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}}>Question</Button>
-                                                <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openEngravingPopup}>Stencil</Button>
-                                            </Col>
-                                            <Col className={"col-3"}>
-                                                <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={openPopup}>Objective</Button>
-                                                <Button style={{backgroundColor: "#29405B", margin: "5px", width: "100px",
-                                                    borderRadius: "20px", fontSize: "12px", fontWeight: "bold"}} onClick={toggleViewpointPopup}>View Point</Button>
-                                            </Col>
-                                        </Row>
-                                    </Col>
                                 </Row>
 
-                                <Row>
-                                    <Col className={"justify-content-center align-content-center"} onContextMenu={rightClick}>
+                                <Row className={"justify-content-end align-content-center"}>
+                                    <Col className={"col-10"} onContextMenu={rightClick}>
                                         <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool}
                                                 color={this.state.color} size={this.state.size} toolActive={this.state.toolActive} />
                                     </Col>
@@ -204,7 +187,7 @@ class MetalEngraving extends React.Component<any, any> {
                                     {/*    */}
                                     {/*</Col>*/}
 
-                                    <Col className={"col-4"}>
+                                    <Col className={"col-6"}>
                                         {/*TODO - Color Selector*/}
                                         {(this.state.tool !== TOOL_ERASER) ?
                                         <>
@@ -294,14 +277,35 @@ class MetalEngraving extends React.Component<any, any> {
                                         </Typography>
                                         <SizeSlider aria-labelledby="size-slider" />
                                     </Col>
-
-                                    <Col className={"col-3"}>
-                                        <Button style={{float: "right", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/telescope-activity')}>Next</Button>
-                                    </Col>
                                 </Row>
                             </Container>
+                        </Col>
+
+                        <Col className={"col-2 ml-auto"} style={{padding: 0}}>
+                            <Row className={"justify-content-end"} style={{margin: 0, marginTop: "10%"}}>
+                                    <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
+                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}>Question</Button>
+                            </Row>
+                            <Row className={"justify-content-end"} style={{margin: 0}}>
+                                    <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
+                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={openEngravingPopup}>Stencil</Button>
+                            </Row>
+                            <Row className={"justify-content-end"} style={{margin: 0}}>
+                                    <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
+                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={openPopup}>Objective</Button>
+                            </Row>
+                            <Row className={"justify-content-end"} style={{margin: 0}}>
+                                    <Button className={"blue-button"} style={{width: 200,
+                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={toggleViewpointPopup}>Viewpoint</Button>
+                            </Row>
+
+                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: "10%"}}>
+                                <Col style={{padding: 0}}>
+                                    <Button className={"green-button"} style={{float: "right", width: 200,
+                                        clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                            onClick={() => this.props.history.push('/telescope-activity')}>Next</Button>
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
                 </Container>

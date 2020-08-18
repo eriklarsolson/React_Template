@@ -10,6 +10,7 @@ import {TelescopeActivity} from "./components/telescope-activity";
 import {StellarCycle} from "./components/stellar-cycle";
 import ObjectPage from "./components/stellar-cycle/ObjectPage";
 import InfoPage from "./components/stellar-cycle/InfoPage";
+import {RocketBuilding} from "./components/rocket-building";
 
 class Routes extends Component {
     render() {
@@ -19,6 +20,7 @@ class Routes extends Component {
                     <Route path="/circuit-building" component={CircuitBuilding} />
                     <Route path="/metal-engraving" component={MetalEngraving} />
                     <Route path="/telescope-activity" component={TelescopeActivity} />
+                    <Route path="/rocket-building" component={RocketBuilding} />
                     <Route path="/stellar-cycle" component={StellarCycle} />
                     <Route path="/object-page" component={ObjectPage} />
                     <Route path="/stellar-info-page" component={InfoPage} />

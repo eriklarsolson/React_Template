@@ -30,22 +30,29 @@ class InfoPage extends React.Component<any, any> {
     render() {
         return (
             <>
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${stellarBackground})`}}>
+                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0",
+                    backgroundImage:`url(${stellarBackground})`}}>
                     <Row style={{margin: 0, padding: 0}}>
                         <Col className={"col-6 vh-100 align-items-center justify-content-center"} style={{display: "flex", margin: 0, padding: 0}}>
                                     <img src={this.state.image} />
                         </Col>
 
-                        <Col className={"col-6 vh-100"} style={{margin: 0, padding: 0, backgroundColor: "#29405B", color: "white"}}>
+                        <Col className={"col-6 vh-100"} style={{margin: 0, padding: 0, backgroundColor: "#29405B",
+                            color: "white", clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}}>
                             <Container fluid style={{margin: 0, padding: 0}}>
-                                <Row className={"justify-content-end"} style={{margin: "0 0 5% 0"}}>
-                                    <Col className={"col-3"}>
-                                        <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+
+                                <Row style={{margin: 0}}>
+                                    <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
+                                        <Row style={{margin: 0}} className={"justify-content-end"}>
+                                            <Button className={"green-button"} style={{marginBottom: 15, width: 200,
+                                                clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/object-page',
                                                     state: { title: this.state.title }
-                                                })}><i className="fa fa-arrow-left" /></Button>
+                                            })}>
+                                                <i className="fa fa-arrow-right" />
+                                            </Button>
+                                        </Row>
                                     </Col>
                                 </Row>
 

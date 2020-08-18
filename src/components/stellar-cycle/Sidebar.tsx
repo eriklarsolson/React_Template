@@ -56,7 +56,8 @@ class Sidebar extends React.Component<any, any> {
 
         return (
             <>
-               <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
+               <Container style={{backgroundColor: "#29405B", margin: 0, padding: 0, height: "100%",
+                   clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)", paddingRight: 25}}>
                    <h3 style={{paddingTop: "15px", paddingBottom: "30px"}}>Attributes</h3>
 
                    <Row style={{margin: "5px"}}>

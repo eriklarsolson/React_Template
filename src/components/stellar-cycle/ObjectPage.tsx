@@ -113,27 +113,29 @@ class ObjectPage extends React.Component<any, any> {
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
                             <Container fluid style={{margin: "0", padding: "0"}}>
-                                <Row style={{margin: "3%"}}>
-                                    <Col>
-                                        <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                            borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/telescope-activity')}><i className="fa fa-arrow-left" /></Button>
+                                <Row style={{margin: 0}}>
+                                    <Col className="col-2" style={{margin: "3%"}}>
+                                        <Button className={"green-button"} style={{float: "left", width: 100,
+                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                                onClick={() => this.props.history.push('/rocket-building')}>
+                                            <i className="fa fa-arrow-left" />
+                                        </Button>
                                     </Col>
 
-                                    <Col>
+                                    <Col style={{margin: "3%"}}>
                                         <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
                                     </Col>
 
-                                    <Col className={"col-4"}>
-                                        <Row>
-                                            <Col className={"col-3 ml-auto"}>
-                                                <Button style={{float: "right", backgroundColor: "#29405B", width: "150px", marginLeft: "50px",
-                                                    borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                        onClick={() => this.props.history.push({
-                                                            pathname: '/stellar-info-page',
-                                                            state: { title: this.state.stellarObjects[this.state.index].title }
-                                                        })}>More Info</Button>
-                                            </Col>
+                                    <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
+                                        <Row style={{margin: 0}} className={"justify-content-end"}>
+                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
+                                                clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
+                                                onClick={() => this.props.history.push({
+                                                    pathname: '/stellar-info-page',
+                                                    state: { title: this.state.stellarObjects[this.state.index].title }
+                                                })}>
+                                                More Info
+                                            </Button>
                                         </Row>
                                     </Col>
                                 </Row>
@@ -171,8 +173,9 @@ class ObjectPage extends React.Component<any, any> {
                                         <TimelineSlider />
                                     </Col>
 
-                                    <Col className={"col-4 d-flex justify-content-center align-content-center"}>
-                                        <Button style={{backgroundColor: "#3BD186", fontSize: "20px", fontWeight: "bold"}}
+                                    <Col className={"col-4 justify-content-center align-content-center"}>
+                                        <Button className={"green-button"} style={{float: "right", width: 200,
+                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                                 onClick={() => this.props.history.push('/stellar-cycle')}>All Stages</Button>
                                     </Col>
                                 </Row>

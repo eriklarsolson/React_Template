@@ -15,7 +15,7 @@ class CircuitPopup extends React.Component<any, any> {
                 <Modal.Body style={{color: "#29405B"}}>
                     <Container fluid>
                         <Row style={{textAlign: "center", display: "block"}}>
-                            <p style={{color: "#29405B", fontSize: "30px", fontWeight: "bold"}}>Components</p>
+                            <p style={{color: "#29405B", fontSize: "30px", fontWeight: "bold"}}>Modules</p>
                         </Row>
 
                         <Row style={{padding: "10px"}}>

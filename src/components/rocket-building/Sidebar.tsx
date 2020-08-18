@@ -1,7 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import {OneGridContainer} from "./grid/OneGridContainer";
-import Button from "react-bootstrap/Button";
 
 class Sidebar extends React.Component {
     render() {
@@ -11,32 +9,21 @@ class Sidebar extends React.Component {
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"concave"} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"convex"} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"flatmirror"} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"viewpoint"} />
-                       </Col>
-                   </Row>
-
-                   <Row className={"justify-content-center"}>
-                       <Col className={"col-6"}>
-                           <Button style={{backgroundColor: "#F8EDDD", width: "150px", color: "black",
-                               fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}>Reset</Button>
                        </Col>
                    </Row>
                </Container>

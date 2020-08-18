@@ -8,7 +8,7 @@ class Sidebar extends React.Component<any, any> {
     render() {
         return (
             <>
-               <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
+               <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%",}}>
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
                    <Row>
                        <Col>
@@ -49,8 +49,8 @@ class Sidebar extends React.Component<any, any> {
 
                     <Row className={"justify-content-center"}>
                         <Col className={"col-6"}>
-                            <Button style={{backgroundColor: "grey", width: "150px", marginRight: "50px",
-                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
+                            <Button style={{backgroundColor: "#F8EDDD", width: "150px", color: "black",
+                                fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                     onClick={() => setComponentsList([])}>Reset</Button>
                         </Col>
                     </Row>

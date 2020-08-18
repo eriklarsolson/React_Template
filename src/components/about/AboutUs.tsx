@@ -30,33 +30,34 @@ class AboutUs extends React.Component<any, any> {
                     draggable
                     pauseOnHover />
 
-                    <Container fluid>
-                        <Row className="justify-content-center" style={{padding: 20, backgroundColor: "#29405B"}}>
-                            <Col style={{margin: 10}} className="col-sm-8 col-md-5 col-lg-3">
+                    <Container fluid style={{margin: 0}}>
+                        <Row className="justify-content-center" style={{height: "auto", paddingBottom: "10%", backgroundColor: "#29405B",
+                            clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)"}}>
+                            <Col style={{margin: 20}} className="col-sm-8 col-md-6 col-lg-2">
                                 <div style={{width: "250px", height: "250px", backgroundColor: "white", borderRadius: "15px"}} />
                             </Col>
 
-                            <Col style={{margin: 10}} className="col-sm-8 col-md-5 col-lg-3">
+                            <Col style={{margin: 20}} className="col-sm-8 col-md-6 col-lg-2">
                                 <div style={{width: "250px", height: "250px", backgroundColor: "white", borderRadius: "15px"}} />
                             </Col>
 
-                            <Col style={{margin: 10}} className="col-sm-8 col-md-5 col-lg-3">
+                            <Col style={{margin: 20}} className="col-sm-8 col-md-6 col-lg-2">
                                 <div style={{width: "250px", height: "250px", backgroundColor: "white", borderRadius: "15px"}} />
                             </Col>
 
-                            <Col style={{margin: 10}} className="col-sm-8 col-md-5 col-lg-3">
+                            <Col style={{margin: 20}} className="col-sm-8 col-md-65 col-lg-2">
                                 <div style={{width: "250px", height: "250px", backgroundColor: "white", borderRadius: "15px"}} />
                             </Col>
 
-                            <Col style={{margin: 10}} className="col-sm-8 col-md-5 col-lg-3">
+                            <Col style={{margin: 20}} className="col-sm-8 col-md-6 col-lg-2">
                                 <div style={{width: "250px", height: "250px", backgroundColor: "white", borderRadius: "15px"}} />
                             </Col>
 
-                            <Col style={{margin: 10}} className="col-sm-8 col-md-5 col-lg-3">
+                            <Col style={{margin: 20}} className="col-sm-8 col-md-6 col-lg-2">
                                 <div style={{width: "250px", height: "250px", backgroundColor: "white", borderRadius: "15px"}} />
                             </Col>
 
-                            <Col style={{margin: 10}} className="col-sm-8 col-lg-3">
+                            <Col style={{margin: 20}} className="col-sm-8 col-md-6 col-lg-2">
                                 <div style={{width: "250px", height: "250px", backgroundColor: "white", borderRadius: "15px"}} />
                             </Col>
                         </Row>
