@@ -10,13 +10,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="lots of styling across lots of activities">
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Viewpoint.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/ViewpointPopup.tsx" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="adding modals and fixing some more styling">
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/avgstar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massivestar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutronstar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/planetarynebula.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/redgiant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/redsupergiant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/supernova.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/whitedwarf.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/RatePopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/RatePopup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/InfoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/InfoPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula_tmp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/stellar_black_hole.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/blackhole.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +52,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/shared/modals" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/stellar-cycle/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -57,11 +69,11 @@
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals\Engraving" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity\grid\components\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity\grid" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\models" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -98,7 +110,7 @@
       <workItem from="1597407921507" duration="1198000" />
       <workItem from="1597503222566" duration="599000" />
       <workItem from="1597596407424" duration="599000" />
-      <workItem from="1597669114850" duration="14545000" />
+      <workItem from="1597669114850" duration="16657000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -177,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597717784010</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="adding modals and fixing some more styling">
+      <created>1597719392126</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1597719392126</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +226,8 @@
     <MESSAGE value="styles and updates" />
     <MESSAGE value="adding pics" />
     <MESSAGE value="lots of styling across lots of activities" />
-    <option name="LAST_COMMIT_MESSAGE" value="lots of styling across lots of activities" />
+    <MESSAGE value="adding modals and fixing some more styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding modals and fixing some more styling" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -262,10 +282,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1597717786443">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1597719395253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597717786443" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597719395253" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -274,11 +294,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="817" y="181" width="585" height="624" key="find.popup" timestamp="1597716563902">
+    <state x="817" y="181" width="585" height="624" key="find.popup" timestamp="1597720695665">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
-    <state x="817" y="181" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597716563902" />
+    <state x="817" y="181" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597720695665" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

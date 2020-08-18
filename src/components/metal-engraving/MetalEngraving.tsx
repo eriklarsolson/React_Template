@@ -165,7 +165,9 @@ class MetalEngraving extends React.Component<any, any> {
                                     <Col>
                                         <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
                                             borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/circuit-building')}>Back</Button>
+                                                onClick={() => this.props.history.push('/circuit-building')}>
+                                            <i className="fa fa-arrow-left" />
+                                        </Button>
                                     </Col>
 
                                     <Col>

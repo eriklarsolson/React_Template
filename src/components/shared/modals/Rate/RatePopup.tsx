@@ -41,7 +41,11 @@ class RatePopup extends React.Component<any, any> {
                     <Modal.Body style={{color: "#29405B"}}>
                         <Container fluid>
                             <Row style={{textAlign: "center", display: "block", paddingTop: "50px"}}>
-                                <p style={{fontSize: "30px", fontWeight: "bold", color: "#29405B"}}>How did you feel about these activities?</p>
+                                <p style={{fontSize: "30px", fontWeight: "bold", color: "#29405B"}}>Congratulations!</p>
+                            </Row>
+
+                            <Row style={{textAlign: "center", display: "block"}}>
+                                <p style={{color: "#29405B"}}>You have successfully launched the telescope into space! How did you feel about these activities?</p>
                             </Row>
 
                             <Row className={"justify-content-center align-content-center"} style={{padding: "10px"}}>
@@ -73,7 +77,7 @@ class RatePopup extends React.Component<any, any> {
 
                             <Row className={"justify-content-center align-content-center"} style={{paddingBottom: "30px", float: "right"}}>
                                 <Button variant="primary" style={{backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                    borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={submitRating}>
+                                    fontSize: "20px", fontWeight: "bold"}} onClick={submitRating}>
                                     Submit
                                 </Button>
                             </Row>

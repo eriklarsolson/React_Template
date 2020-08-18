@@ -130,7 +130,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: "3%"}}>
                                         <Col>
                                             <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToLastLevel}>Back</Button>
+                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}} onClick={goToLastLevel}><i className="fa fa-arrow-left" /></Button>
                                         </Col>
 
                                         <Col>
@@ -160,9 +160,8 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                     <Row style={{margin: "3%"}}>
                                         <Col className={"col-2"}>
-                                            <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                                borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                    onClick={deleteCurrentComponent}><i className="fa fa-trash" /></Button>
+                                            <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px", fontWeight: "bold"}}
+                                                    onClick={deleteCurrentComponent}><i className="fa fa-trash-o" style={{color: "black"}} /></Button>
                                         {/*    fa-spin */}
                                         </Col>
 

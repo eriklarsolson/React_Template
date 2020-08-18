@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import satellite from './satellite.png'
 import {TelescopeGridContainer} from "./grid/TelescopeGridContainer";
+import 'font-awesome/css/font-awesome.min.css';
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
@@ -59,7 +60,9 @@ class TelescopeActivity extends React.Component<any, any> {
                                     <Col>
                                         <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
                                             borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/metal-engraving')}>Back</Button>
+                                                onClick={() => this.props.history.push('/metal-engraving')}>
+                                            <i className="fa fa-arrow-left" />
+                                        </Button>
                                     </Col>
 
                                     <Col>

@@ -5,8 +5,8 @@ import stellarBackground from './stellarBackground.png';
 import rightarrow from './rightarrow.png';
 import leftarrow from './leftarrow.png';
 import Sidebar from "./Sidebar";
-import nebula from "./images/nebula_tmp.png"
-import stellar_black_hole from "./images/stellar_black_hole.png"
+import nebula from "./images/nebula.png"
+import stellar_black_hole from "./images/blackhole.png"
 import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
 import {Slider, withStyles} from "@material-ui/core";
@@ -117,7 +117,7 @@ class ObjectPage extends React.Component<any, any> {
                                     <Col>
                                         <Button style={{float: "left", backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
                                             borderRadius: "20px", fontSize: "20px", fontWeight: "bold"}}
-                                                onClick={() => this.props.history.push('/telescope-activity')}>Go Back</Button>
+                                                onClick={() => this.props.history.push('/telescope-activity')}><i className="fa fa-arrow-left" /></Button>
                                     </Col>
 
                                     <Col>

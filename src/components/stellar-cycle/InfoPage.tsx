@@ -2,8 +2,8 @@ import React from "react";
 import {Container, Row, Col} from 'react-bootstrap'
 import stellarBackground from './stellarBackground.png';
 import Button from "react-bootstrap/Button";
-import nebula from "./images/nebula_tmp.png"
-import stellar_black_hole from "./images/stellar_black_hole.png"
+import nebula from "./images/nebula.png"
+import stellar_black_hole from "./images/blackhole.png"
 
 class InfoPage extends React.Component<any, any> {
     constructor(props: any) {
@@ -45,7 +45,7 @@ class InfoPage extends React.Component<any, any> {
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/object-page',
                                                     state: { title: this.state.title }
-                                                })}>Go Back</Button>
+                                                })}><i className="fa fa-arrow-left" /></Button>
                                     </Col>
                                 </Row>
 
