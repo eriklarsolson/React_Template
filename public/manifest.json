@@ -1,6 +1,6 @@
 {
-  "short_name": "Bohring Art",
-  "name": "Interactive exhibit for museum",
+  "short_name": "React Template",
+  "name": "template for react projects",
   "icons": [
     {
       "src": "favicon.ico",

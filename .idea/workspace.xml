@@ -11,17 +11,132 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Making them buttons look pretty &#10;&#10;also I added the initial page for rocket building">
+      <change beforePath="$PROJECT_DIR$/.idea/bohringart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/React_Template.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Engraving/EngravingPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Engraving/EngravingPopup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/About.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/About.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/aboutusbanner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/ColorOverlay.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGrid.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGrid.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Inductor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/battery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/capacitor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/inductor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/resistor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/rotate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/switch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/wire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/objective1wire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/objective2wire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/objective3wire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/hubble.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/hubble1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/canvasBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasercomponenticon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasericon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasericonactive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasericonon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/metal_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/optics.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/optics_small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/prism.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/prism_small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/resources/Resources.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/resources/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/CircuitPopup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Engraving/EngravingPopup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Engraving/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Engraving/planet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Engraving/plant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Engraving/snowman.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/Rate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/RatePopup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/bored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/happy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/neutral.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/smart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Viewpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/ViewpointPopup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/models/ComponentTypes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/models/Example.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/models/DragItem.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/models/LearnSectionModel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/models/TelescopeTypes.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/InfoPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/avgstar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/blackhole.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massivestar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutronstar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/planetarynebula.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/redgiant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/redsupergiant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/supernova.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/whitedwarf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/leftarrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/rightarrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/stellarBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/ColorOverlay.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/Functionality.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/GridSquare.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/OneGrid.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/OneGridContainer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/Square.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/TelescopeGrid.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/TelescopeGridContainer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Concave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Convex.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/FlatMirror.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Viewpoint.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/concave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/convex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/flatmirror.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/viewpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/satellite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +160,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/rocket-building" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Crainehouse/Website" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
-    <property name="ts.external.directory.path" value="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\energ\Documents\ContractWork\React_Template\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -105,6 +220,8 @@
       <workItem from="1597596407424" duration="599000" />
       <workItem from="1597669114850" duration="16657000" />
       <workItem from="1597753300627" duration="20395000" />
+      <workItem from="1597792618902" duration="808000" />
+      <workItem from="1602880544758" duration="650000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -244,10 +361,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595382862279" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597291088196">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597793008177">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597291088196" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597793008177" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1595972265667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -256,10 +373,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="629" y="298" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594947783720" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1596133102168">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1597793425595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1596133102168" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597793425595" />
     <state width="1480" height="168" key="GridCell.Tab.0.bottom" timestamp="1595717092156">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -296,11 +413,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="817" y="181" width="585" height="624" key="find.popup" timestamp="1597791798985">
+    <state x="822" y="173" width="585" height="624" key="find.popup" timestamp="1597793116336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
-    <state x="817" y="181" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597791798985" />
+    <state x="822" y="173" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597793116336" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

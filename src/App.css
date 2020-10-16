@@ -36,28 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.green-button {
-  background-color: #3BD186 !important;
-  font-size: 20px !important;
-  font-weight: bold !important;
-  outline: none !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-}
-
-.blue-button {
-  background-color: #29405B !important;
-  font-size: 15px !important;
-  outline: none !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-}
-
-.blue-button:hover {
-  border: 2px solid white !important;
-}
-
-.green-button:hover {
-  border: 2px solid white !important;
-}

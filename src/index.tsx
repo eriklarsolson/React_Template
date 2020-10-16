@@ -4,14 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {DndProvider} from "react-dnd";
-import {HTML5Backend} from "react-dnd-html5-backend";
 
 ReactDOM.render(
   <React.StrictMode>
-      <DndProvider backend={HTML5Backend}>
-          <App />
-      </DndProvider>
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
